@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skladenOS: система для складных устройств</title>
+<meta name="description" content="skladenOS — дистрибутив на базе Mobian и SXMO для телефонов и палмтопов-раскладушек. Первое устройство — Xiaomi Poco F1. В разработке.">
+<meta name="theme-color" content="#E9EBEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0E15" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mitya-labs.github.io/">
+<link rel="alternate" hreflang="ru" href="https://mitya-labs.github.io/">
+<link rel="alternate" hreflang="en" href="https://mitya-labs.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://mitya-labs.github.io/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a href="./" aria-label="skladenOS">
+    <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg"><img src="assets/logo-light.svg" alt="skladenOS" width="475" height="112"></picture>
+  </a>
+  <nav aria-label="Язык и ссылки"><a href="en/" hreflang="en" lang="en">English</a> &nbsp; <a href="https://github.com/mitya-labs">GitHub</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Система для складных устройств</h1>
+    <p class="lede">skladenOS — дистрибутив на базе Mobian и SXMO для телефонов и палмтопов-раскладушек. Первое устройство — Xiaomi Poco F1.</p>
+    <p class="status"><strong>В разработке.</strong> Готовых образов для скачивания пока нет: сборка из исходников и проверка на устройстве ещё идут.</p>
+  </div>
+  <svg class="mark" viewBox="0 0 320 160" role="img" aria-label="Знак skladenOS: четыре сложенные грани"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
+</div>
+
+<section class="cols"><h2>Что это</h2><div class="body"><p>skladenOS ставится на телефоны и устройства-раскладушки, где экран и клавиатура соединены шарниром. Это Mobian (Debian) с оконным менеджером SXMO: лёгкий интерфейс, которым управляют жестами, кнопками громкости и внешней клавиатурой.</p><p>Система учитывает вырез экрана и скруглённые углы: окна и панели не заходят под челку, даже в полноэкранном режиме.</p></div></section>
+
+<section class="cols"><h2>Что уже работает</h2><div class="body">
+<dl class="feat"><dt>Вырез и углы</dt><dd>Панель и окна отступают от выреза и перестраиваются при повороте экрана.</dd><dt>Кнопки и жесты</dt><dd>Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>.</dd><dt>USB</dt><dd>Роль хоста или устройства выбирается сама: хаб, флешка и клавиатура работают, с компьютером поднимается USB-сеть.</dd><dt>Питание</dt><dd>Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет».</dd><dt>Раскладки</dt><dd>Английская и русская по CapsLock, экранная клавиатура с кириллицей.</dd><dt>Звук и датчики</dt><dd>Оба динамика, датчики через SLPI на ядре 7.x.</dd></dl>
+<p class="note">Проверено на рабочей сборке Poco F1 с ядром 7.2. Новая сборка из исходников ещё проходит проверку на устройстве.</p></div></section>
+
+<section class="cols"><h2>Как собирается</h2><div class="body">
+<ol class="steps"><li><b>Ядро</b>Ядро Mobian для SDM845 из исходников и наши патчи: Type-C и зарядка PD.</li><li><b>Пакеты</b>Настройки устройства и SXMO оформлены как deb-пакеты.</li><li><b>Образ</b>Рецепты Mobian (debos) собирают образ из ядра и пакетов.</li><li><b>Прошивка</b>Образ прошивается на телефон через fastboot.</li></ol>
+<p>Версии ядра и рецептов зафиксированы, сборку планируется вести в CI на GitHub: образ можно будет воспроизвести из исходников.</p></div></section>
+
+<section class="cols"><h2>Что дальше</h2><div class="body"><ul class="road"><li class="done">Имя, организация и чистый репозиторий</li><li class="done">Каркас сборки ядра с патчами, пакеты настроек, логотип</li><li>Полная сборка ядра и образа в CI</li><li>Проверка на Poco F1 с обоими вариантами панели (ebbg и tianma)</li><li>Иконки статус-бара, лицензия и описание репозитория</li><li>Публичный репозиторий и первый образ</li></ul></div></section>
+
+<section class="cols"><h2>Основа и права</h2><div class="body fine"><p>skladenOS основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Оконный менеджер <a href="https://sxmo.org">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне.</p><p><strong>Логотип skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Название и логотип остаются отличительными знаками проекта.</p></div></section>
+
+<section class="cols"><h2>Где следить</h2><div class="body"><p>Проект ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a> на GitHub. Репозиторий откроется, когда будут готовы лицензия и описание. До тех пор можно подписаться на организацию, чтобы не пропустить открытие.</p></div></section>
+</main>
+
+<footer>
+  <p>© 2026 mitya labs. skladenOS — проект в разработке; страница обновляется по мере продвижения.</p>
+</footer>
+</div>
+</body>
+</html>
