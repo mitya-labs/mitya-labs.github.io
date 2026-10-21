@@ -173,7 +173,7 @@ RU["os"] = "\n".join([
            ("Прошивка", "Образ прошивается на телефон через fastboot.")]),
     "<p>Версии ядра и рецептов зафиксированы, сборку планируется вести в CI на GitHub: образ можно будет воспроизвести из исходников.</p>",
     "<h3>Что дальше</h3>",
-    road(["Имя, организация и чистый репозиторий", "Каркас сборки ядра с патчами, пакеты настроек, логотип", "Полная сборка ядра и образа в CI", "Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)", "Иконки статус-бара, лицензия и описание репозитория", "Публичный репозиторий и первый образ"], 2),
+    road(["Имя, организация и чистый репозиторий", "Каркас сборки ядра с патчами, пакеты настроек, логотип", "Полная сборка ядра и образа в CI", "Обновления по воздуху (OTA) через собственный репозиторий пакетов", "Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)", "Иконки статус-бара, лицензия и описание репозитория", "Публичный репозиторий и первый образ"], 2),
 ])
 RU["s5"] = "".join([
     "<p><strong>Skladen:</strong> конструкция открыта под CERN-OHL-S-2.0, исходником считается Python-модель.</p>",
@@ -230,7 +230,7 @@ EN["os"] = "\n".join([
            ("Flashing", "The image is flashed to the phone with fastboot.")]),
     "<p>Kernel and recipe versions are pinned, and the build is planned to run in CI on GitHub, so the image can be reproduced from source.</p>",
     "<h3>What is next</h3>",
-    road(["Name, organization and a clean repository", "Kernel build scaffolding with patches, settings packages, logo", "Full kernel and image build in CI", "Testing with both Poco F1 panel variants (ebbg and tianma)", "Status bar icons, license and repository description", "Public repository and the first image"], 2),
+    road(["Name, organization and a clean repository", "Kernel build scaffolding with patches, settings packages, logo", "Full kernel and image build in CI", "Over-the-air (OTA) updates through our own package repository", "Testing with both Poco F1 panel variants (ebbg and tianma)", "Status bar icons, license and repository description", "Public repository and the first image"], 2),
 ])
 EN["s5"] = "".join([
     "<p><strong>Skladen:</strong> the design is open under CERN-OHL-S-2.0; the Python model counts as the source.</p>",
