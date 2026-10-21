@@ -48,16 +48,20 @@ a:hover { text-decoration-thickness: 2px; }
 .wrap { width: min(100% - 2.5rem, 70rem); margin-inline: auto; }
 
 /* шапка */
-.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; }
+.top { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem 2rem; padding-block: 1.5rem; }
+.brand { grid-area: 1 / 1; }
 .brand img { height: 3.9rem; width: auto; }
-.top nav { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; justify-content: flex-end; font: 700 .95rem/1 var(--mono); }
+.top nav { grid-area: 1 / 2; justify-self: end; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font: 700 .95rem/1 var(--mono); }
 .top nav a { color: var(--ink); text-decoration: none; padding: .5rem 0; border-bottom: 2px solid var(--fold-light); }
 .top nav a:hover { border-bottom-color: var(--ink); }
 
-.top nav .lang { display: inline-flex; }
-.top nav .lang a { padding: .5rem .55rem; color: var(--muted); border-bottom: 2px solid transparent; }
-.top nav .lang a:hover { color: var(--ink); border-bottom-color: var(--crease); }
-.top nav .lang a[aria-current] { color: var(--ink); border-bottom-color: var(--fold-light); }
+/* переключатель языка: капсула из двух сегментов, активный залит */
+.lang { grid-area: 1 / 3; display: inline-flex; align-items: stretch; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; font: 700 .85rem/1 var(--mono); -webkit-text-size-adjust: 100%; }
+.lang a { display: block; padding: .6rem .95rem; color: var(--ink); text-decoration: none; background: transparent; }
+.lang a + a { border-left: 2px solid var(--ink); }
+.lang a:hover { background: var(--sheet-2); }
+.lang a[aria-current] { background: var(--fold-light); color: #14151C; }
+.lang a:focus-visible { outline-offset: -4px; }
 
 /* первый экран */
 .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(2rem, 6vw, 5.5rem) clamp(2.5rem, 6vw, 5rem); }
@@ -120,6 +124,9 @@ footer { border-top: 1px solid var(--crease); padding-block: 2rem 3rem; color: v
 footer p { margin: 0 0 .4rem; max-width: 46rem; }
 
 @media (max-width: 860px) {
+  .top { grid-template-columns: 1fr auto; }
+  .lang { grid-area: 1 / 2; }
+  .top nav { grid-area: 2 / 1 / 3 / 3; justify-self: start; }
   .hero { grid-template-columns: 1fr; }
   .cols { grid-template-columns: 1fr; gap: 1rem; }
   ol.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -128,8 +135,7 @@ footer p { margin: 0 0 .4rem; max-width: 46rem; }
   body { font-size: 1.05rem; }
   .mark { width: 8rem; }
   .brand img { height: 3rem; }
-  .top { align-items: flex-start; }
-  .top nav { gap: .5rem 1rem; font-size: .85rem; }
+  .top nav { gap: .5rem 1.1rem; font-size: .88rem; }
   dl.feat { grid-template-columns: 1fr; gap: .1rem; }
   dl.feat dd { margin-bottom: 1rem; }
   ol.steps { grid-template-columns: 1fr; }

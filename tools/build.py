@@ -31,6 +31,8 @@ PAGE = '''<!doctype html>
 <link rel="alternate" hreflang="en" href="{site}en/">
 <link rel="alternate" hreflang="x-default" href="{site}en/">
 <link rel="icon" href="{up}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png">
 <link rel="preload" href="{up}assets/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{up}style.css">
 <script>
@@ -55,10 +57,10 @@ PAGE = '''<!doctype html>
   <nav aria-label="{navlabel}">
     <a href="#skladen">Skladen</a>
     <a href="#skladenos">skladenOS</a>
-    <span class="lang" role="group" aria-label="{langlabel}"><a href="{ru_href}" hreflang="ru" lang="ru" data-lang="ru"{ru_cur}>RU</a><a href="{en_href}" hreflang="en" lang="en" data-lang="en"{en_cur}>EN</a></span>
     <a href="{gh}">GitHub</a>
     <a href="{tg}">Telegram</a>
   </nav>
+  <div class="lang" role="group" aria-label="{langlabel}"><a href="{ru_href}" hreflang="ru" lang="ru" data-lang="ru"{ru_cur}>RU</a><a href="{en_href}" hreflang="en" lang="en" data-lang="en"{en_cur}>EN</a></div>
 </header>
 
 <main>
