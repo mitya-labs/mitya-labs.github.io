@@ -105,9 +105,9 @@ def figure(img, w, h, alt, cap):
 RU = dict(
     lang="ru", path="", up="", home="./", other="en/", olang="en", olabel="English", navlabel="Разделы и язык",
     title="Mitya Labs: Skladen и skladenOS",
-    desc="Mitya Labs делает Skladen, напечатанную раскладушку, которая превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для неё.",
-    h1="Раскладушка из телефона и клавиатуры",
-    lede="Mitya Labs делает Skladen: напечатанный на 3D-принтере корпус, который превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука, и skladenOS, систему для него.",
+    desc="Mitya Labs делает Skladen, напечатанный палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для него.",
+    h1="Палмтоп из телефона и клавиатуры",
+    lede="Mitya Labs делает Skladen: напечатанный на 3D-принтере палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука, и skladenOS, систему для него.",
     status="<strong>Skladen 2.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.",
     photo_alt="Напечатанный Skladen 2.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в основании",
     photo_cap="Skladen 2.1.0: Pocophone F1 в прозрачной крышке из PETG, клавиатура Jomaa в основании. На экране рабочая сборка, из которой вырастает skladenOS.",
@@ -115,7 +115,7 @@ RU = dict(
     foot="© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.",
 )
 RU["sk"] = "\n".join([
-    "<p>Skladen — раскладушка, которая превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука. Название — <i>складень</i>: дорожная икона на петлях, две створки, которые смыкаются над тем, что в них лежит.</p>",
+    "<p>Skladen — палмтоп-раскладушка: она превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука. Название — <i>складень</i>: дорожная икона на петлях, две створки, которые смыкаются над тем, что в них лежит.</p>",
     "<p>Крышка держит телефон под рамкой на защёлках, в основании клавиатура Jomaa KEYBOARD098RU из чехла-книжки. Всё напечатано, петли держатся на двух болтах M3. Конструкция описана кодом (build123d): размеры и проверки считаются при сборке модели.</p>",
     dl([("Телефон", "Xiaomi Pocophone F1, 155,5 × 75,3 × 9,25 мм, 182 г"),
         ("Клавиатура", "Jomaa KEYBOARD098RU"),
@@ -162,9 +162,9 @@ RU["s6"] = "<p>Проекты ведёт организация <a href=\"%s\">m
 EN = dict(
     lang="en", path="en/", up="../", home="./", other="../", olang="ru", olabel="Русский", navlabel="Sections and language",
     title="Mitya Labs: Skladen and skladenOS",
-    desc="Mitya Labs builds Skladen, a printed clamshell that turns a Xiaomi Pocophone F1 into a pocketable terminal, and skladenOS, an operating system for it.",
-    h1="A clamshell made of a phone and a keyboard",
-    lede="Mitya Labs builds Skladen, a 3D-printed shell that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal, and skladenOS, the system for it.",
+    desc="Mitya Labs builds Skladen, a printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable terminal, and skladenOS, an operating system for it.",
+    h1="A palmtop made of a phone and a keyboard",
+    lede="Mitya Labs builds Skladen, a 3D-printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal, and skladenOS, the system for it.",
     status="<strong>Skladen 2.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.",
     photo_alt="The printed Skladen 2.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a transparent lid, the Jomaa keyboard in the base",
     photo_cap="Skladen 2.1.0: a Pocophone F1 in a transparent PETG lid, the Jomaa keyboard in the base. The screen runs the working build skladenOS grows out of.",
@@ -172,7 +172,7 @@ EN = dict(
     foot="© 2026 Mitya Labs. This page is updated as the projects move along.",
 )
 EN["sk"] = "\n".join([
-    "<p>Skladen is a clamshell that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal. The name is <i>skladen</i> (складень), a hinged Russian travel icon: two panels that fold shut over what they carry.</p>",
+    "<p>Skladen is a clamshell palmtop that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal. The name is <i>skladen</i> (складень), a hinged Russian travel icon: two panels that fold shut over what they carry.</p>",
     "<p>The lid holds the phone under a clip-on bezel, the base carries a Jomaa KEYBOARD098RU salvaged from a folio case. Everything is printed, and the hinge sits on two M3 bolts. The design is written as code (build123d): dimensions and checks are computed when the model is built.</p>",
     dl([("Phone", "Xiaomi Pocophone F1, 155.5 × 75.3 × 9.25 mm, 182 g"),
         ("Keyboard", "Jomaa KEYBOARD098RU"),
