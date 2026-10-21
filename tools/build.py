@@ -8,6 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://mitya-labs.github.io/"
 GH = "https://github.com/mitya-labs"
 SK = GH + "/skladen"
+TG = "https://t.me/dorimemmap"
 
 MARK = ('<svg class="mark" viewBox="0 0 320 160" role="img" aria-label="{alt}">'
         '<polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/>'
@@ -42,6 +43,7 @@ PAGE = '''<!doctype html>
     <a href="#skladenos">skladenOS</a>
     <a href="{other}" hreflang="{olang}" lang="{olang}">{olabel}</a>
     <a href="{gh}">GitHub</a>
+    <a href="{tg}">Telegram</a>
   </nav>
 </header>
 
@@ -157,7 +159,7 @@ RU["s5"] = "".join([
     "<p><strong>skladenOS</strong> основан на <a href=\"https://mobian.org\">Mobian</a> и <a href=\"https://www.debian.org\">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Оконный менеджер <a href=\"https://sxmo.org\">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне. Лицензия кода skladenOS будет объявлена при открытии репозитория.</p>",
     "<p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Названия и логотипы остаются отличительными знаками проектов.</p>",
 ])
-RU["s6"] = "<p>Проекты ведёт организация <a href=\"%s\">mitya-labs</a> на GitHub. Репозиторий <a href=\"%s\">Skladen</a> открыт. Репозиторий skladenOS откроется, когда будут готовы лицензия и описание; до тех пор можно подписаться на организацию.</p>" % (GH, SK)
+RU["s6"] = "<p>Проекты ведёт организация <a href=\"%s\">mitya-labs</a> на GitHub. Репозиторий <a href=\"%s\">Skladen</a> открыт. Репозиторий skladenOS откроется, когда будут готовы лицензия и описание; до тех пор можно подписаться на организацию. Новости и заметки по ходу работы — в <a href=\"%s\">Telegram-канале</a>.</p>" % (GH, SK, TG)
 
 EN = dict(
     lang="en", path="en/", up="../", home="./", other="../", olang="ru", olabel="Русский", navlabel="Sections and language",
@@ -214,12 +216,12 @@ EN["s5"] = "".join([
     "<p><strong>skladenOS</strong> is based on <a href=\"https://mobian.org\">Mobian</a> and <a href=\"https://www.debian.org\">Debian</a>, but it is not an official release of either and is not affiliated with those projects. The <a href=\"https://sxmo.org\">SXMO</a> window manager is distributed under the AGPL-3.0. We do not distribute Qualcomm or Xiaomi firmware: the system extracts it on the phone itself. The license of the skladenOS code will be announced when the repository opens.</p>",
     "<p><strong>The Mitya Labs and skladenOS logos are © 2026 Dmitrii Trifonov, all rights reserved.</strong> The names and the logos remain distinctive marks of the projects.</p>",
 ])
-EN["s6"] = "<p>The projects are run by the <a href=\"%s\">mitya-labs</a> organization on GitHub. The <a href=\"%s\">Skladen</a> repository is open. The skladenOS repository will open once the license and the description are ready; until then, follow the organization.</p>" % (GH, SK)
+EN["s6"] = "<p>The projects are run by the <a href=\"%s\">mitya-labs</a> organization on GitHub. The <a href=\"%s\">Skladen</a> repository is open. The skladenOS repository will open once the license and the description are ready; until then, follow the organization. News and notes along the way are in the <a href=\"%s\">Telegram channel</a>.</p>" % (GH, SK, TG)
 
 
 def build():
     for d, out in ((RU, "index.html"), (EN, "en/index.html")):
-        html = PAGE.format(site=SITE, gh=GH, **d)
+        html = PAGE.format(site=SITE, gh=GH, tg=TG, **d)
         os.makedirs(os.path.dirname(os.path.join(ROOT, out)), exist_ok=True)
         open(os.path.join(ROOT, out), "w", encoding="utf-8").write(html)
         print("ok", out, len(html))
