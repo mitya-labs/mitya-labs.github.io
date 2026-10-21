@@ -29,10 +29,24 @@ PAGE = '''<!doctype html>
 <link rel="canonical" href="{site}{path}">
 <link rel="alternate" hreflang="ru" href="{site}">
 <link rel="alternate" hreflang="en" href="{site}en/">
-<link rel="alternate" hreflang="x-default" href="{site}">
+<link rel="alternate" hreflang="x-default" href="{site}en/">
 <link rel="icon" href="{up}assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="{up}assets/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{up}style.css">
+<script>
+/* Язык по умолчанию: с корня (русская версия) уводим на /en/, если язык браузера не русский и пользователь не выбирал язык сам.
+   Выбор переключателем RU/EN запоминается в localStorage. Страница /en/ при прямом заходе не перенаправляется. */
+(function () {{
+  if (!{isroot}) return;
+  var want = null;
+  try {{ want = localStorage.getItem("lang"); }} catch (e) {{}}
+  if (want !== "ru" && want !== "en") {{
+    var l = (navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language) || "ru";
+    want = /^ru(-|$)/i.test(l) ? "ru" : "en";
+  }}
+  if (want === "en") location.replace("en/" + location.search + location.hash);
+}})();
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -41,7 +55,7 @@ PAGE = '''<!doctype html>
   <nav aria-label="{navlabel}">
     <a href="#skladen">Skladen</a>
     <a href="#skladenos">skladenOS</a>
-    <a href="{other}" hreflang="{olang}" lang="{olang}">{olabel}</a>
+    <span class="lang" role="group" aria-label="{langlabel}"><a href="{ru_href}" hreflang="ru" lang="ru" data-lang="ru"{ru_cur}>RU</a><a href="{en_href}" hreflang="en" lang="en" data-lang="en"{en_cur}>EN</a></span>
     <a href="{gh}">GitHub</a>
     <a href="{tg}">Telegram</a>
   </nav>
@@ -77,6 +91,11 @@ PAGE = '''<!doctype html>
   <p>{foot}</p>
 </footer>
 </div>
+<script>
+document.querySelectorAll("a[data-lang]").forEach(function (a) {{
+  a.addEventListener("click", function () {{ try {{ localStorage.setItem("lang", a.getAttribute("data-lang")); }} catch (e) {{}} }});
+}});
+</script>
 </body>
 </html>
 '''
@@ -105,7 +124,7 @@ def figure(img, w, h, alt, cap):
 
 
 RU = dict(
-    lang="ru", path="", up="", home="./", other="en/", olang="en", olabel="English", navlabel="Разделы и язык",
+    lang="ru", path="", up="", home="./", isroot="true", ru_href="./", en_href="en/", ru_cur=' aria-current="true"', en_cur="", langlabel="Язык", navlabel="Разделы и язык",
     title="Mitya Labs: Skladen и skladenOS",
     desc="Mitya Labs делает Skladen, напечатанный палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для него.",
     h1="Палмтоп из телефона и клавиатуры",
@@ -162,7 +181,7 @@ RU["s5"] = "".join([
 RU["s6"] = "<p>Проекты ведёт организация <a href=\"%s\">mitya-labs</a> на GitHub. Репозиторий <a href=\"%s\">Skladen</a> открыт. Репозиторий skladenOS откроется, когда будут готовы лицензия и описание; до тех пор можно подписаться на организацию. Новости и заметки по ходу работы — в <a href=\"%s\">Telegram-канале</a>.</p>" % (GH, SK, TG)
 
 EN = dict(
-    lang="en", path="en/", up="../", home="./", other="../", olang="ru", olabel="Русский", navlabel="Sections and language",
+    lang="en", path="en/", up="../", home="./", isroot="false", ru_href="../", en_href="./", ru_cur="", en_cur=' aria-current="true"', langlabel="Language", navlabel="Sections and language",
     title="Mitya Labs: Skladen and skladenOS",
     desc="Mitya Labs builds Skladen, a printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable terminal, and skladenOS, an operating system for it.",
     h1="A palmtop made of a phone and a keyboard",

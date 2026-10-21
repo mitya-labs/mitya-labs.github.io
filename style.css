@@ -54,6 +54,11 @@ a:hover { text-decoration-thickness: 2px; }
 .top nav a { color: var(--ink); text-decoration: none; padding: .5rem 0; border-bottom: 2px solid var(--fold-light); }
 .top nav a:hover { border-bottom-color: var(--ink); }
 
+.top nav .lang { display: inline-flex; }
+.top nav .lang a { padding: .5rem .55rem; color: var(--muted); border-bottom: 2px solid transparent; }
+.top nav .lang a:hover { color: var(--ink); border-bottom-color: var(--crease); }
+.top nav .lang a[aria-current] { color: var(--ink); border-bottom-color: var(--fold-light); }
+
 /* первый экран */
 .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(2rem, 6vw, 5.5rem) clamp(2.5rem, 6vw, 5rem); }
 h1 { font: 700 clamp(2.1rem, 5.2vw, 3.9rem)/1.08 var(--mono); letter-spacing: -.035em; margin: 0 0 1.5rem; text-wrap: balance; }
