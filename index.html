@@ -3,10 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>skladenOS: система для складных устройств</title>
-<meta name="description" content="skladenOS — дистрибутив на базе Mobian и SXMO для телефонов и палмтопов-раскладушек. Первое устройство — Xiaomi Poco F1. В разработке.">
+<title>Mitya Labs: Skladen и skladenOS</title>
+<meta name="description" content="Mitya Labs делает Skladen, напечатанную раскладушку, которая превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для неё.">
 <meta name="theme-color" content="#E9EBEF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D0E15" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Mitya Labs: Skladen и skladenOS">
+<meta property="og:description" content="Mitya Labs делает Skladen, напечатанную раскладушку, которая превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для неё.">
+<meta property="og:image" content="https://mitya-labs.github.io/assets/img/skladen2-photo.jpg">
 <link rel="canonical" href="https://mitya-labs.github.io/">
 <link rel="alternate" hreflang="ru" href="https://mitya-labs.github.io/">
 <link rel="alternate" hreflang="en" href="https://mitya-labs.github.io/en/">
@@ -18,41 +21,61 @@
 <body>
 <div class="wrap">
 <header class="top">
-  <a href="./" aria-label="skladenOS">
-    <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg"><img src="assets/logo-light.svg" alt="skladenOS" width="475" height="112"></picture>
-  </a>
-  <nav aria-label="Язык и ссылки"><a href="en/" hreflang="en" lang="en">English</a> &nbsp; <a href="https://github.com/mitya-labs">GitHub</a></nav>
+  <a href="./" class="brand" aria-label="Mitya Labs"><img src="assets/mitya-labs.svg" alt="Mitya Labs" width="209" height="99"></a>
+  <nav aria-label="Разделы и язык">
+    <a href="#skladen">Skladen</a>
+    <a href="#skladenos">skladenOS</a>
+    <a href="en/" hreflang="en" lang="en">English</a>
+    <a href="https://github.com/mitya-labs">GitHub</a>
+  </nav>
 </header>
 
 <main>
 <div class="hero">
   <div>
-    <h1>Система для складных устройств</h1>
-    <p class="lede">skladenOS — дистрибутив на базе Mobian и SXMO для телефонов и палмтопов-раскладушек. Первое устройство — Xiaomi Poco F1.</p>
-    <p class="status"><strong>В разработке.</strong> Готовых образов для скачивания пока нет: сборка из исходников и проверка на устройстве ещё идут.</p>
+    <h1>Раскладушка из телефона и клавиатуры</h1>
+    <p class="lede">Mitya Labs делает Skladen: напечатанный на 3D-принтере корпус, который превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука, и skladenOS, систему для него.</p>
+    <p class="status"><strong>Skladen 2.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.</p>
   </div>
-  <svg class="mark" viewBox="0 0 320 160" role="img" aria-label="Знак skladenOS: четыре сложенные грани"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
+  <figure class="shot">
+    <img src="assets/img/skladen2-photo.jpg" width="1100" height="729" alt="Напечатанный Skladen 2.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в основании">
+    <figcaption>Skladen 2.1.0: Pocophone F1 в прозрачной крышке из PETG, клавиатура Jomaa в основании. На экране рабочая сборка, из которой вырастает skladenOS.</figcaption>
+  </figure>
 </div>
 
-<section class="cols"><h2>Что это</h2><div class="body"><p>skladenOS ставится на телефоны и устройства-раскладушки, где экран и клавиатура соединены шарниром. Это Mobian (Debian) с оконным менеджером SXMO: лёгкий интерфейс, которым управляют жестами, кнопками громкости и внешней клавиатурой.</p><p>Система учитывает вырез экрана и скруглённые углы: окна и панели не заходят под челку, даже в полноэкранном режиме.</p></div></section>
+<section class="cols" id="skladen"><h2>Skladen</h2><div class="body">
+<p>Skladen — раскладушка, которая превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука. Название — <i>складень</i>: дорожная икона на петлях, две створки, которые смыкаются над тем, что в них лежит.</p>
+<p>Крышка держит телефон под рамкой на защёлках, в основании клавиатура Jomaa KEYBOARD098RU из чехла-книжки. Всё напечатано, петли держатся на двух болтах M3. Конструкция описана кодом (build123d): размеры и проверки считаются при сборке модели.</p>
+<dl class="feat"><dt>Телефон</dt><dd>Xiaomi Pocophone F1, 155,5 × 75,3 × 9,25 мм, 182 г</dd><dt>Клавиатура</dt><dd>Jomaa KEYBOARD098RU</dd><dt>В сложенном виде</dt><dd>24,29 мм у петли, 20,31 мм спереди</dd><dt>Масса</dt><dd>около 403 г по модели</dd></dl>
+<h3>Версии</h3>
+<div class="table-wrap"><table class="ver"><thead><tr><th scope="col">Версия</th><th scope="col">Что это</th><th scope="col">Дата</th></tr></thead><tbody><tr><td><a href="https://github.com/mitya-labs/skladen/tree/v2.1.0">2.1.0</a></td><td>Skladen 2 с рамкой на защёлках; напечатан</td><td>2026-10-20</td></tr><tr><td><a href="https://github.com/mitya-labs/skladen/tree/v2.0.0">2.0.0</a></td><td>Skladen 2 под Pocophone F1, телефон на ленте; напечатан</td><td>2026-10-06</td></tr><tr><td><a href="https://github.com/mitya-labs/skladen/tree/v1.0.0">1.0.0</a></td><td>Skladen 1 под Pixel 3a XL; напечатан</td><td>2026-10-02</td></tr></tbody></table></div>
+<p class="note">Размеры и масса взяты из модели, замеры напечатанных экземпляров ещё не сведены. Последние правки рамки смоделированы и проверены, на печати не подтверждены.</p>
+<figure class="render"><img src="assets/img/skladen2-open.webp" width="1000" height="726" alt="Skladen 2, открытый на 112 градусов: в крышке телефон с терминалом, в основании клавиатура" loading="lazy"><figcaption>Открытый на 112°. Рендер из модели; телефон и клавиатура заменены заготовками по измеренным габаритам.</figcaption></figure>
+<figure class="render"><img src="assets/img/skladen2-closed.webp" width="1000" height="318" alt="Skladen 2 в сложенном виде, вид спереди справа" loading="lazy"><figcaption>Сложенный: 24,29 мм у петли.</figcaption></figure>
+<p class="note">Конструкция открыта под CERN-OHL-S-2.0. Исходники, документы и список изменений: <a href="https://github.com/mitya-labs/skladen">репозиторий Skladen</a>.</p>
+</div></section>
 
-<section class="cols"><h2>Что уже работает</h2><div class="body">
+<section class="cols" id="skladenos"><h2>skladenOS</h2><div class="body">
+<svg class="mark" viewBox="0 0 320 160" role="img" aria-label="Знак skladenOS: четыре сложенные грани"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
+<p>skladenOS — система для Skladen и других складных устройств, где экран и клавиатура соединены шарниром. Это Mobian (Debian) с оконным менеджером SXMO: лёгкий интерфейс, которым управляют жестами, кнопками громкости и внешней клавиатурой. Система учитывает вырез экрана и скруглённые углы: окна и панели не заходят под челку, даже в полноэкранном режиме.</p>
+<p class="status">Готовых образов для скачивания пока нет: сборка из исходников и проверка на устройстве ещё идут.</p>
+<h3>Что уже работает</h3>
 <dl class="feat"><dt>Вырез и углы</dt><dd>Панель и окна отступают от выреза и перестраиваются при повороте экрана.</dd><dt>Кнопки и жесты</dt><dd>Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>.</dd><dt>USB</dt><dd>Роль хоста или устройства выбирается сама: хаб, флешка и клавиатура работают, с компьютером поднимается USB-сеть.</dd><dt>Питание</dt><dd>Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет».</dd><dt>Раскладки</dt><dd>Английская и русская по CapsLock, экранная клавиатура с кириллицей.</dd><dt>Звук и датчики</dt><dd>Оба динамика, датчики через SLPI на ядре 7.x.</dd></dl>
-<p class="note">Проверено на рабочей сборке Poco F1 с ядром 7.2. Новая сборка из исходников ещё проходит проверку на устройстве.</p></div></section>
-
-<section class="cols"><h2>Как собирается</h2><div class="body">
+<p class="note">Проверено на рабочей сборке с Pocophone F1 и ядром 7.2. Новая сборка из исходников ещё проходит проверку на устройстве.</p>
+<h3>Как собирается</h3>
 <ol class="steps"><li><b>Ядро</b>Ядро Mobian для SDM845 из исходников и наши патчи: Type-C и зарядка PD.</li><li><b>Пакеты</b>Настройки устройства и SXMO оформлены как deb-пакеты.</li><li><b>Образ</b>Рецепты Mobian (debos) собирают образ из ядра и пакетов.</li><li><b>Прошивка</b>Образ прошивается на телефон через fastboot.</li></ol>
-<p>Версии ядра и рецептов зафиксированы, сборку планируется вести в CI на GitHub: образ можно будет воспроизвести из исходников.</p></div></section>
+<p>Версии ядра и рецептов зафиксированы, сборку планируется вести в CI на GitHub: образ можно будет воспроизвести из исходников.</p>
+<h3>Что дальше</h3>
+<ul class="road"><li class="done">Имя, организация и чистый репозиторий</li><li class="done">Каркас сборки ядра с патчами, пакеты настроек, логотип</li><li>Полная сборка ядра и образа в CI</li><li>Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)</li><li>Иконки статус-бара, лицензия и описание репозитория</li><li>Публичный репозиторий и первый образ</li></ul>
+</div></section>
 
-<section class="cols"><h2>Что дальше</h2><div class="body"><ul class="road"><li class="done">Имя, организация и чистый репозиторий</li><li class="done">Каркас сборки ядра с патчами, пакеты настроек, логотип</li><li>Полная сборка ядра и образа в CI</li><li>Проверка на Poco F1 с обоими вариантами панели (ebbg и tianma)</li><li>Иконки статус-бара, лицензия и описание репозитория</li><li>Публичный репозиторий и первый образ</li></ul></div></section>
+<section class="cols"><h2>Основа и права</h2><div class="body fine"><p><strong>Skladen:</strong> конструкция открыта под CERN-OHL-S-2.0, исходником считается Python-модель.</p><p><strong>skladenOS</strong> основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Оконный менеджер <a href="https://sxmo.org">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне. Лицензия кода skladenOS будет объявлена при открытии репозитория.</p><p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Названия и логотипы остаются отличительными знаками проектов.</p></div></section>
 
-<section class="cols"><h2>Основа и права</h2><div class="body fine"><p>skladenOS основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Оконный менеджер <a href="https://sxmo.org">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне.</p><p><strong>Логотип skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Название и логотип остаются отличительными знаками проекта.</p></div></section>
-
-<section class="cols"><h2>Где следить</h2><div class="body"><p>Проект ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a> на GitHub. Репозиторий откроется, когда будут готовы лицензия и описание. До тех пор можно подписаться на организацию, чтобы не пропустить открытие.</p></div></section>
+<section class="cols"><h2>Где следить</h2><div class="body"><p>Проекты ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a> на GitHub. Репозиторий <a href="https://github.com/mitya-labs/skladen">Skladen</a> открыт. Репозиторий skladenOS откроется, когда будут готовы лицензия и описание; до тех пор можно подписаться на организацию.</p></div></section>
 </main>
 
 <footer>
-  <p>© 2026 mitya labs. skladenOS — проект в разработке; страница обновляется по мере продвижения.</p>
+  <p>© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.</p>
 </footer>
 </div>
 </body>

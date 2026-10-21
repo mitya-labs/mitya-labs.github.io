@@ -49,8 +49,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* шапка */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; }
-.top img { height: 2.6rem; width: auto; }
-.top nav { font: 700 .95rem/1 var(--mono); }
+.brand img { height: 3.9rem; width: auto; }
+.top nav { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; justify-content: flex-end; font: 700 .95rem/1 var(--mono); }
 .top nav a { color: var(--ink); text-decoration: none; padding: .5rem 0; border-bottom: 2px solid var(--fold-light); }
 .top nav a:hover { border-bottom-color: var(--ink); }
 
@@ -61,14 +61,16 @@ h1 { font: 700 clamp(2.1rem, 5.2vw, 3.9rem)/1.08 var(--mono); letter-spacing: -.
 .status { margin: 0; padding: .9rem 1.1rem; max-width: 34rem; background: var(--sheet); border-left: 6px solid var(--fold-light); font-size: 1rem; line-height: 1.55; color: var(--muted); }
 .status strong { color: var(--ink); font-family: var(--mono); font-size: .95rem; }
 
-.mark { width: 100%; height: auto; overflow: visible; }
-.mark polygon { transform-box: fill-box; transform-origin: left center; animation: unfold .8s cubic-bezier(.2, .75, .2, 1) both; }
-.mark .p1 { fill: var(--fold-light); }
-.mark .p2 { fill: var(--fold-dark); animation-delay: .14s; }
-.mark .p3 { fill: var(--fold-light); animation-delay: .28s; }
-.mark .p4 { fill: var(--fold-mid); animation-delay: .42s; }
-@keyframes unfold { from { transform: scaleX(0); } }
-@media (prefers-reduced-motion: reduce) { .mark polygon { animation: none; } }
+.mark { width: 11rem; height: auto; margin: 0 0 1.5rem; }
+.mark .p1, .mark .p3 { fill: var(--fold-light); }
+.mark .p2 { fill: var(--fold-dark); }
+.mark .p4 { fill: var(--fold-mid); }
+
+.shot { margin: 0; }
+.shot img { width: 100%; height: auto; border: 1px solid var(--crease); }
+figcaption { margin-top: .6rem; font-size: .95rem; line-height: 1.5; color: var(--muted); max-width: 40rem; }
+.render { margin: 1.75rem 0 0; max-width: 40rem; }
+.render img { width: 100%; height: auto; background: var(--sheet); }
 
 /* секции */
 section { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-top: 1px solid var(--crease); }
@@ -76,6 +78,17 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-top: 1px solid var(-
 h2 { font: 700 1.55rem/1.2 var(--mono); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
 .body p { margin: 0 0 1.1rem; max-width: 39rem; }
 .body p:last-child { margin-bottom: 0; }
+h3 { font: 700 1.05rem/1.3 var(--mono); letter-spacing: -.01em; margin: 2.25rem 0 .9rem; }
+.body p + dl.feat { margin-top: 1.5rem; }
+.body p.status { margin: 1.4rem 0 0; }
+
+.table-wrap { overflow-x: auto; max-width: 46rem; }
+table.ver { border-collapse: collapse; width: 100%; font-size: 1rem; line-height: 1.5; }
+table.ver th { text-align: left; font: 700 .9rem/1.4 var(--mono); padding: .5rem 1rem .5rem 0; border-bottom: 2px solid var(--crease); }
+table.ver td { padding: .65rem 1rem .65rem 0; border-bottom: 1px solid var(--crease); vertical-align: top; }
+table.ver td:first-child { font: 700 .95rem/1.6 var(--mono); white-space: nowrap; }
+table.ver td:last-child { white-space: nowrap; color: var(--muted); }
+
 code, kbd { font: 400 .9em var(--mono); background: var(--sheet); padding: .1em .35em; border-radius: 3px; }
 
 dl.feat { margin: 0; display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr); gap: 1.1rem 1.75rem; max-width: 46rem; }
@@ -103,14 +116,15 @@ footer p { margin: 0 0 .4rem; max-width: 46rem; }
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
-  .mark { max-width: 20rem; order: -1; }
   .cols { grid-template-columns: 1fr; gap: 1rem; }
   ol.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   body { font-size: 1.05rem; }
-  .mark { max-width: 14rem; }
-  .top img { height: 2.1rem; }
+  .mark { width: 8rem; }
+  .brand img { height: 3rem; }
+  .top { align-items: flex-start; }
+  .top nav { gap: .5rem 1rem; font-size: .85rem; }
   dl.feat { grid-template-columns: 1fr; gap: .1rem; }
   dl.feat dd { margin-bottom: 1rem; }
   ol.steps { grid-template-columns: 1fr; }
