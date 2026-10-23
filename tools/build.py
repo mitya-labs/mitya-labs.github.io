@@ -56,6 +56,7 @@ PAGE = '''<!doctype html>
   <a href="{home}" class="brand" aria-label="Mitya Labs"><img src="{up}assets/mitya-labs.svg" alt="Mitya Labs" width="209" height="99"></a>
   <nav aria-label="{navlabel}">
     <a href="#skladen">Skladen</a>
+    <a href="#configurator">{cfg_h}</a>
     <a href="#skladenos">skladenOS</a>
     <a href="{gh}">GitHub</a>
     <a href="{tg}">Telegram</a>
