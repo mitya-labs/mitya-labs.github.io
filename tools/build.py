@@ -128,6 +128,14 @@ def figure(img, w, h, alt, cap):
     return '<figure class="render"><img src="%s" width="%d" height="%d" alt="%s" loading="lazy"><figcaption>%s</figcaption></figure>' % (img, w, h, alt, cap)
 
 
+def configurator(up, text, alt, cta, href):
+    pic = ('<a class="cfgview" href="%s"><picture>'
+           '<source srcset="%sassets/img/configurator-dark.webp" media="(prefers-color-scheme: dark)">'
+           '<img src="%sassets/img/configurator-light.webp" width="1240" height="500" alt="%s" loading="lazy"></picture></a>'
+           % (href, up, up, alt))
+    return '<p>%s</p>%s<p><a class="cta" href="%s">%s</a></p>' % (text, pic, href, cta)
+
+
 RU = dict(
     lang="ru", path="", up="", home="./", isroot="true", ru_href="./", en_href="en/", ru_cur=' aria-current="true"', en_cur="", langlabel="Язык", navlabel="Разделы и язык",
     title="Mitya Labs: Skladen и skladenOS",
@@ -137,7 +145,7 @@ RU = dict(
     status="<strong>Skladen 2.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.",
     photo_alt="Напечатанный Skladen 2.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в основании",
     photo_cap="Skladen 2.1.0: Pocophone F1 в прозрачной крышке из PETG, клавиатура Jomaa в основании. На экране рабочая сборка, из которой вырастает skladenOS.",
-    cfg_h="Конфигуратор", cfg='<p>Выберите детали Skladen 2 и скачайте файл для печати: STL или 3MF, с предпросмотром столов.</p><iframe class="cfg" src="https://mitya-labs.github.io/skladen/?lang=ru" title="Конфигуратор Skladen 2" loading="lazy" allow="fullscreen"></iframe><p class="note">Модель собирается заранее из исходников; открыть отдельной страницей: <a href="https://mitya-labs.github.io/skladen/?lang=ru">конфигуратор</a>.</p>',
+    cfg_h="Конфигуратор", cfg=configurator("", "Выберите детали Skladen 2 (крышку, рамку, базу) и скачайте файл для печати: STL или 3MF.", "Детали Skladen 2 на двух столах 256×256 в конфигураторе: крышка и база на первом, рамка на втором", "Открыть конфигуратор →", "https://mitya-labs.github.io/skladen/?lang=ru"),
     s5h="Основа и права", s6h="Где следить",
     foot="© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.",
 )
@@ -195,7 +203,7 @@ EN = dict(
     status="<strong>Skladen 2.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.",
     photo_alt="The printed Skladen 2.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a transparent lid, the Jomaa keyboard in the base",
     photo_cap="Skladen 2.1.0: a Pocophone F1 in a transparent PETG lid, the Jomaa keyboard in the base. The screen runs the working build skladenOS grows out of.",
-    cfg_h="Configurator", cfg='<p>Pick the Skladen 2 parts and download a print file: STL or 3MF, with a preview of the print beds.</p><iframe class="cfg" src="https://mitya-labs.github.io/skladen/?lang=en" title="Skladen 2 configurator" loading="lazy" allow="fullscreen"></iframe><p class="note">The variants are pre-built from the sources; open it on its own page: <a href="https://mitya-labs.github.io/skladen/?lang=en">configurator</a>.</p>',
+    cfg_h="Configurator", cfg=configurator("../", "Pick the Skladen 2 parts (lid, frame, base) and download a print file: STL or 3MF.", "Skladen 2 parts on two 256×256 beds in the configurator: the lid and base on the first, the frame on the second", "Open the configurator →", "https://mitya-labs.github.io/skladen/?lang=en"),
     s5h="Basis and rights", s6h="Follow along",
     foot="© 2026 Mitya Labs. This page is updated as the projects move along.",
 )

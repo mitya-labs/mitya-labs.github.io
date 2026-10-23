@@ -141,6 +141,9 @@ footer p { margin: 0 0 .4rem; max-width: 46rem; }
   ol.steps { grid-template-columns: 1fr; }
 }
 
-/* конфигуратор Skladen во фрейме */
-iframe.cfg { display: block; width: 100%; height: min(46rem, 85vh); border: 1px solid var(--crease); border-radius: 6px; background: transparent; }
-@media (max-width: 760px) { iframe.cfg { height: 90vh; } }
+/* конфигуратор: снимок столов и кнопка перехода */
+.cfgview { display: block; margin: 1.25rem 0; }
+.cfgview img { display: block; width: 100%; height: auto; border: 1px solid var(--crease); }
+a.cta { display: inline-block; font: 700 1rem/1 var(--mono); padding: .85rem 1.2rem; color: var(--paper); background: var(--ink); text-decoration: none; border: 2px solid var(--ink); border-radius: 999px; }
+a.cta:hover { background: transparent; color: var(--ink); }
+a.cta:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
