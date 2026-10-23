@@ -80,6 +80,8 @@ PAGE = '''<!doctype html>
 {sk}
 </div></section>
 
+<section class="cols" id="configurator"><h2>{cfg_h}</h2><div class="body">{cfg}</div></section>
+
 <section class="cols" id="skladenos"><h2>skladenOS</h2><div class="body">
 {os}
 </div></section>
@@ -134,6 +136,7 @@ RU = dict(
     status="<strong>Skladen 2.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.",
     photo_alt="Напечатанный Skladen 2.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в основании",
     photo_cap="Skladen 2.1.0: Pocophone F1 в прозрачной крышке из PETG, клавиатура Jomaa в основании. На экране рабочая сборка, из которой вырастает skladenOS.",
+    cfg_h="Конфигуратор", cfg='<p>Выберите детали Skladen 2 и скачайте файл для печати: STL или 3MF, с предпросмотром столов.</p><iframe class="cfg" src="https://mitya-labs.github.io/skladen/?lang=ru" title="Конфигуратор Skladen 2" loading="lazy" allow="fullscreen"></iframe><p class="note">Модель собирается заранее из исходников; открыть отдельной страницей: <a href="https://mitya-labs.github.io/skladen/?lang=ru">конфигуратор</a>.</p>',
     s5h="Основа и права", s6h="Где следить",
     foot="© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.",
 )
@@ -191,6 +194,7 @@ EN = dict(
     status="<strong>Skladen 2.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.",
     photo_alt="The printed Skladen 2.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a transparent lid, the Jomaa keyboard in the base",
     photo_cap="Skladen 2.1.0: a Pocophone F1 in a transparent PETG lid, the Jomaa keyboard in the base. The screen runs the working build skladenOS grows out of.",
+    cfg_h="Configurator", cfg='<p>Pick the Skladen 2 parts and download a print file: STL or 3MF, with a preview of the print beds.</p><iframe class="cfg" src="https://mitya-labs.github.io/skladen/?lang=en" title="Skladen 2 configurator" loading="lazy" allow="fullscreen"></iframe><p class="note">The variants are pre-built from the sources; open it on its own page: <a href="https://mitya-labs.github.io/skladen/?lang=en">configurator</a>.</p>',
     s5h="Basis and rights", s6h="Follow along",
     foot="© 2026 Mitya Labs. This page is updated as the projects move along.",
 )

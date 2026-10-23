@@ -140,3 +140,7 @@ footer p { margin: 0 0 .4rem; max-width: 46rem; }
   dl.feat dd { margin-bottom: 1rem; }
   ol.steps { grid-template-columns: 1fr; }
 }
+
+/* конфигуратор Skladen во фрейме */
+iframe.cfg { display: block; width: 100%; height: min(46rem, 85vh); border: 1px solid var(--crease); border-radius: 6px; background: transparent; }
+@media (max-width: 760px) { iframe.cfg { height: 90vh; } }
