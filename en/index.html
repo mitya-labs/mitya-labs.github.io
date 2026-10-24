@@ -53,7 +53,7 @@
   <div>
     <h1>A palmtop made of a phone and a keyboard</h1>
     <p class="lede">Mitya Labs builds Skladen, a 3D-printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal, and skladenOS, the system for it.</p>
-    <p class="status"><strong>Skladen 2.1.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.</p>
+    <p class="status"><strong>Skladen 2.1.1 is printed and assembled.</strong> skladenOS: the source and the package repository are open; there is no ready-made image to download yet.</p>
   </div>
   <figure class="shot">
     <img src="../assets/img/skladen2-photo.jpg" width="1100" height="825" alt="The printed Skladen 2.1.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a clear lid with a teal bezel and logo, the Jomaa keyboard in a clear base">
@@ -78,20 +78,32 @@
 <section class="cols" id="skladenos"><h2>skladenOS</h2><div class="body">
 <svg class="mark" viewBox="0 0 320 160" role="img" aria-label="skladenOS mark: four folded panels"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
 <p>skladenOS is the system for Skladen and other folding devices where the screen and the keyboard are joined by a hinge. It is Mobian (Debian) with the SXMO window manager: a light interface driven by gestures, volume keys and an external keyboard. It respects the display notch and rounded corners: windows and bars never go under the cutout, even in fullscreen.</p>
-<p class="status">There are no images to download yet: building from source and testing on the device are still under way.</p>
+<p class="status">The source and the package repository are open. There is no ready-made image to download yet: the image is built from source with one command (Docker), see the <a href="https://github.com/mitya-labs/skladenos">repository</a>.</p>
 <h3>What works today</h3>
-<dl class="feat"><dt>Notch and corners</dt><dd>The bar and windows keep clear of the cutout and adjust when the screen rotates.</dd><dt>Buttons and gestures</dt><dd>Power, volume, edge gestures; <kbd>Super</kbd>+<kbd>Esc</kbd> works from an external keyboard.</dd><dt>USB</dt><dd>Host or device role is picked automatically: a hub, a flash drive and a keyboard work; USB networking comes up with a computer.</dd><dt>Power</dt><dd>“Balanced”, “Eco”, “Night” and “Performance” profiles from the menu, plus a “keep screen awake” mode.</dd><dt>Layouts</dt><dd>English and Russian switched with CapsLock, on-screen keyboard with Cyrillic.</dd><dt>Audio and sensors</dt><dd>Both speakers, sensors through the SLPI on kernel 7.x.</dd></dl>
-<p class="note">Verified on a working build with a Pocophone F1 and kernel 7.2. The new from-source build is still being tested on the device.</p>
+<dl class="feat"><dt>Notch and corners</dt><dd>The bar and windows keep clear of the cutout and adjust when the screen rotates.</dd><dt>Buttons and gestures</dt><dd>Power, volume, edge gestures; <kbd>Super</kbd>+<kbd>Esc</kbd> works from an external keyboard.</dd><dt>First boot</dt><dd>A wizard in 12 languages: Bluetooth keyboard, Wi-Fi, user name and a required password change.</dd><dt>USB</dt><dd>Host or device role is picked automatically: a hub, a flash drive and a keyboard work; USB networking comes up with a computer.</dd><dt>Power</dt><dd>“Balanced”, “Eco”, “Night” and “Performance” profiles from the menu, plus a “keep screen awake” mode.</dd><dt>Layouts</dt><dd>English and Russian switched with CapsLock, on-screen keyboard with Cyrillic.</dd><dt>Audio and sensors</dt><dd>Both speakers, sensors through the SLPI on kernel 7.x.</dd><dt>Emulators</dt><dd>HP Jornada 720 (Windows CE) and Psion 5mx install as packages from our repository; bring your own ROM.</dd></dl>
+<p class="note">Verified on a Pocophone F1 with kernel 7.2: an image built from source is flashed and runs.</p>
 <h3>How it is built</h3>
-<ol class="steps"><li><b>Kernel</b>The Mobian SDM845 kernel from source plus our patches: Type-C and PD charging.</li><li><b>Packages</b>Device and SXMO settings are shipped as deb packages.</li><li><b>Image</b>Mobian recipes (debos) assemble an image from the kernel and the packages.</li><li><b>Flashing</b>The image is flashed to the phone with fastboot.</li></ol>
-<p>Kernel and recipe versions are pinned, and the build is planned to run in CI on GitHub, so the image can be reproduced from source.</p>
+<ol class="steps"><li><b>Kernel</b>The Mobian SDM845 kernel from source plus our patches: Type-C and PD charging.</li><li><b>Packages</b>Device and SXMO settings, the first-boot wizard, fonts and emulators are shipped as deb packages.</li><li><b>Image</b>Docker assembles an image from the official Mobian rootfs, our packages and the kernel: about five minutes.</li><li><b>Flashing</b>The image is flashed to the phone with fastboot.</li></ol>
+<p>Kernel and base image versions are pinned and the build reproduces from source; moving it to CI on GitHub is still ahead.</p>
+<h3>Packages from the repository</h3>
+<p>skladenOS packages live in a signed apt repository, release <b>garmon</b> (arm64). The image already has the source enabled; on another system on a Poco F1:</p>
+<pre><code>curl -fsS https://mitya-labs.github.io/apt/skladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null
+sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;'EOF'
+Types: deb
+URIs: https://mitya-labs.github.io/apt/
+Suites: garmon
+Components: main non-free
+Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg
+EOF
+sudo apt update</code></pre>
+<p>Signing key fingerprint: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>
 <h3>What is next</h3>
-<ul class="road"><li class="done">Name, organization and a clean repository</li><li class="done">Kernel build scaffolding with patches, settings packages, logo</li><li>Full kernel and image build in CI</li><li>Over-the-air (OTA) updates through our own package repository</li><li>Testing with both Poco F1 panel variants (ebbg and tianma)</li><li>Status bar icons, license and repository description</li><li>Public repository and the first image</li></ul>
+<ul class="road"><li class="done">Name, organization and a clean repository</li><li class="done">Kernel build with patches, settings packages, logo</li><li class="done">The image builds and flashes from source</li><li class="done">First-boot wizard in 12 languages</li><li class="done">Our own signed package repository and emulators as packages</li><li class="done">Public repository and the code license</li><li>Kernel and image build in CI</li><li>Testing with both Poco F1 panel variants (ebbg and tianma)</li><li>A downloadable image</li></ul>
 </div></section>
 
-<section class="cols"><h2>Basis and rights</h2><div class="body fine"><p><strong>Skladen:</strong> the design is open under CERN-OHL-S-2.0; the Python model counts as the source.</p><p><strong>skladenOS</strong> is based on <a href="https://mobian.org">Mobian</a> and <a href="https://www.debian.org">Debian</a>, but it is not an official release of either and is not affiliated with those projects. The <a href="https://sxmo.org">SXMO</a> window manager is distributed under the AGPL-3.0. We do not distribute Qualcomm or Xiaomi firmware: the system extracts it on the phone itself. The license of the skladenOS code will be announced when the repository opens.</p><p><strong>The Mitya Labs and skladenOS logos are © 2026 Dmitrii Trifonov, all rights reserved.</strong> The names and the logos remain distinctive marks of the projects.</p></div></section>
+<section class="cols"><h2>Basis and rights</h2><div class="body fine"><p><strong>Skladen:</strong> the design is open under CERN-OHL-S-2.0; the Python model counts as the source.</p><p><strong>skladenOS</strong> is based on <a href="https://mobian.org">Mobian</a> and <a href="https://www.debian.org">Debian</a>, but it is not an official release of either and is not affiliated with those projects. The skladenOS code is open under GPL-3.0-or-later, the kernel patches under GPL-2.0-only, the free wallpapers under CC BY-SA 4.0. The <a href="https://sxmo.org">SXMO</a> window manager is distributed under the AGPL-3.0. We do not distribute Qualcomm or Xiaomi firmware: the system extracts it on the phone itself.</p><p><strong>The Mitya Labs and skladenOS logos are © 2026 Dmitrii Trifonov, all rights reserved.</strong> The names and the logos remain distinctive marks of the projects; the rules are in <a href="https://github.com/mitya-labs/skladenos/blob/main/TRADEMARK.md">TRADEMARK.md</a>.</p></div></section>
 
-<section class="cols"><h2>Follow along</h2><div class="body"><p>The projects are run by the <a href="https://github.com/mitya-labs">mitya-labs</a> organization on GitHub. The <a href="https://github.com/mitya-labs/skladen">Skladen</a> repository is open. The skladenOS repository will open once the license and the description are ready; until then, follow the organization. News and notes along the way are in the <a href="https://t.me/dorimemmap">Telegram channel</a>.</p></div></section>
+<section class="cols"><h2>Follow along</h2><div class="body"><p>The projects are run by the <a href="https://github.com/mitya-labs">mitya-labs</a> organization on GitHub. The <a href="https://github.com/mitya-labs/skladen">Skladen</a> and <a href="https://github.com/mitya-labs/skladenos">skladenOS</a> repositories are open. News and notes along the way are in the <a href="https://t.me/dorimemmap">Telegram channel</a>.</p></div></section>
 </main>
 
 <footer>

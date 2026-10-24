@@ -53,7 +53,7 @@
   <div>
     <h1>Палмтоп из телефона и клавиатуры</h1>
     <p class="lede">Mitya Labs делает Skladen: напечатанный на 3D-принтере палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука, и skladenOS, систему для него.</p>
-    <p class="status"><strong>Skladen 2.1.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.</p>
+    <p class="status"><strong>Skladen 2.1.1 напечатан и собран.</strong> skladenOS: исходники и репозиторий пакетов открыты, готового образа для скачивания пока нет.</p>
   </div>
   <figure class="shot">
     <img src="assets/img/skladen2-photo.jpg" width="1100" height="825" alt="Напечатанный Skladen 2.1.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в прозрачном основании, бирюзовые рамка и логотип">
@@ -78,20 +78,32 @@
 <section class="cols" id="skladenos"><h2>skladenOS</h2><div class="body">
 <svg class="mark" viewBox="0 0 320 160" role="img" aria-label="Знак skladenOS: четыре сложенные грани"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
 <p>skladenOS — система для Skladen и других складных устройств, где экран и клавиатура соединены шарниром. Это Mobian (Debian) с оконным менеджером SXMO: лёгкий интерфейс, которым управляют жестами, кнопками громкости и внешней клавиатурой. Система учитывает вырез экрана и скруглённые углы: окна и панели не заходят под челку, даже в полноэкранном режиме.</p>
-<p class="status">Готовых образов для скачивания пока нет: сборка из исходников и проверка на устройстве ещё идут.</p>
+<p class="status">Исходники и репозиторий пакетов открыты. Готового образа для скачивания пока нет: образ собирается из исходников одной командой (Docker), инструкция в <a href="https://github.com/mitya-labs/skladenos">репозитории</a>.</p>
 <h3>Что уже работает</h3>
-<dl class="feat"><dt>Вырез и углы</dt><dd>Панель и окна отступают от выреза и перестраиваются при повороте экрана.</dd><dt>Кнопки и жесты</dt><dd>Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>.</dd><dt>USB</dt><dd>Роль хоста или устройства выбирается сама: хаб, флешка и клавиатура работают, с компьютером поднимается USB-сеть.</dd><dt>Питание</dt><dd>Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет».</dd><dt>Раскладки</dt><dd>Английская и русская по CapsLock, экранная клавиатура с кириллицей.</dd><dt>Звук и датчики</dt><dd>Оба динамика, датчики через SLPI на ядре 7.x.</dd></dl>
-<p class="note">Проверено на рабочей сборке с Pocophone F1 и ядром 7.2. Новая сборка из исходников ещё проходит проверку на устройстве.</p>
+<dl class="feat"><dt>Вырез и углы</dt><dd>Панель и окна отступают от выреза и перестраиваются при повороте экрана.</dd><dt>Кнопки и жесты</dt><dd>Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>.</dd><dt>Первая загрузка</dt><dd>Мастер на 12 языках: Bluetooth-клавиатура, Wi-Fi, имя пользователя и обязательная смена пароля.</dd><dt>USB</dt><dd>Роль хоста или устройства выбирается сама: хаб, флешка и клавиатура работают, с компьютером поднимается USB-сеть.</dd><dt>Питание</dt><dd>Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет».</dd><dt>Раскладки</dt><dd>Английская и русская по CapsLock, экранная клавиатура с кириллицей.</dd><dt>Звук и датчики</dt><dd>Оба динамика, датчики через SLPI на ядре 7.x.</dd><dt>Эмуляторы</dt><dd>HP Jornada 720 (Windows CE) и Psion 5mx ставятся пакетами из нашего репозитория; ROM нужен свой.</dd></dl>
+<p class="note">Проверено на Pocophone F1 с ядром 7.2: образ, собранный из исходников, прошит и работает.</p>
 <h3>Как собирается</h3>
-<ol class="steps"><li><b>Ядро</b>Ядро Mobian для SDM845 из исходников и наши патчи: Type-C и зарядка PD.</li><li><b>Пакеты</b>Настройки устройства и SXMO оформлены как deb-пакеты.</li><li><b>Образ</b>Рецепты Mobian (debos) собирают образ из ядра и пакетов.</li><li><b>Прошивка</b>Образ прошивается на телефон через fastboot.</li></ol>
-<p>Версии ядра и рецептов зафиксированы, сборку планируется вести в CI на GitHub: образ можно будет воспроизвести из исходников.</p>
+<ol class="steps"><li><b>Ядро</b>Ядро Mobian для SDM845 из исходников и наши патчи: Type-C и зарядка PD.</li><li><b>Пакеты</b>Настройки устройства и SXMO, мастер первой загрузки, шрифты и эмуляторы оформлены как deb-пакеты.</li><li><b>Образ</b>Docker собирает образ из официального rootfs Mobian, наших пакетов и ядра: около пяти минут.</li><li><b>Прошивка</b>Образ прошивается на телефон через fastboot.</li></ol>
+<p>Версии ядра и базового образа зафиксированы, сборка воспроизводится из исходников; перенос в CI на GitHub впереди.</p>
+<h3>Пакеты из репозитория</h3>
+<p>Пакеты skladenOS лежат в подписанном apt-репозитории, релиз <b>garmon</b> (arm64). В образе источник уже включён; на другой системе на Poco F1:</p>
+<pre><code>curl -fsS https://mitya-labs.github.io/apt/skladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null
+sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;'EOF'
+Types: deb
+URIs: https://mitya-labs.github.io/apt/
+Suites: garmon
+Components: main non-free
+Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg
+EOF
+sudo apt update</code></pre>
+<p>Отпечаток ключа подписи: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>
 <h3>Что дальше</h3>
-<ul class="road"><li class="done">Имя, организация и чистый репозиторий</li><li class="done">Каркас сборки ядра с патчами, пакеты настроек, логотип</li><li>Полная сборка ядра и образа в CI</li><li>Обновления по воздуху (OTA) через собственный репозиторий пакетов</li><li>Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)</li><li>Иконки статус-бара, лицензия и описание репозитория</li><li>Публичный репозиторий и первый образ</li></ul>
+<ul class="road"><li class="done">Имя, организация и чистый репозиторий</li><li class="done">Сборка ядра с патчами, пакеты настроек, логотип</li><li class="done">Образ собирается и прошивается из исходников</li><li class="done">Мастер первой загрузки на 12 языках</li><li class="done">Свой подписанный репозиторий пакетов и эмуляторы пакетами</li><li class="done">Публичный репозиторий и лицензия кода</li><li>Сборка ядра и образа в CI</li><li>Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)</li><li>Образ для скачивания</li></ul>
 </div></section>
 
-<section class="cols"><h2>Основа и права</h2><div class="body fine"><p><strong>Skladen:</strong> конструкция открыта под CERN-OHL-S-2.0, исходником считается Python-модель.</p><p><strong>skladenOS</strong> основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Оконный менеджер <a href="https://sxmo.org">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне. Лицензия кода skladenOS будет объявлена при открытии репозитория.</p><p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Названия и логотипы остаются отличительными знаками проектов.</p></div></section>
+<section class="cols"><h2>Основа и права</h2><div class="body fine"><p><strong>Skladen:</strong> конструкция открыта под CERN-OHL-S-2.0, исходником считается Python-модель.</p><p><strong>skladenOS</strong> основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Код skladenOS открыт под GPL-3.0-or-later, патчи ядра — GPL-2.0-only, свободные обои — CC BY-SA 4.0. Оконный менеджер <a href="https://sxmo.org">SXMO</a> распространяется под AGPL-3.0. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне.</p><p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Названия и логотипы остаются отличительными знаками проектов; правила — в <a href="https://github.com/mitya-labs/skladenos/blob/main/TRADEMARK.md">TRADEMARK.md</a>.</p></div></section>
 
-<section class="cols"><h2>Где следить</h2><div class="body"><p>Проекты ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a> на GitHub. Репозиторий <a href="https://github.com/mitya-labs/skladen">Skladen</a> открыт. Репозиторий skladenOS откроется, когда будут готовы лицензия и описание; до тех пор можно подписаться на организацию. Новости и заметки по ходу работы — в <a href="https://t.me/dorimemmap">Telegram-канале</a>.</p></div></section>
+<section class="cols"><h2>Где следить</h2><div class="body"><p>Проекты ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a> на GitHub. Репозитории <a href="https://github.com/mitya-labs/skladen">Skladen</a> и <a href="https://github.com/mitya-labs/skladenos">skladenOS</a> открыты. Новости и заметки по ходу работы — в <a href="https://t.me/dorimemmap">Telegram-канале</a>.</p></div></section>
 </main>
 
 <footer>

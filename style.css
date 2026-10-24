@@ -146,3 +146,6 @@ iframe.cfg { display: block; width: 100%; height: min(34rem, 80vh); margin: 1.25
 a.cta { display: inline-block; font: 700 1rem/1 var(--mono); padding: .85rem 1.2rem; color: var(--paper); background: var(--ink); text-decoration: none; border: 2px solid var(--ink); border-radius: 999px; }
 a.cta:hover { background: transparent; color: var(--ink); }
 a.cta:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+
+pre { font: 400 .85em var(--mono); background: var(--sheet); padding: .8rem 1rem; border-radius: 3px; overflow-x: auto; }
+pre code { background: none; padding: 0; font: inherit; }
