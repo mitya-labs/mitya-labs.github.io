@@ -72,7 +72,7 @@ PAGE = '''<!doctype html>
     <p class="status">{status}</p>
   </div>
   <figure class="shot">
-    <img src="{up}assets/img/skladen2-photo.jpg" width="1100" height="729" alt="{photo_alt}">
+    <img src="{up}assets/img/skladen2-photo.jpg" width="1100" height="825" alt="{photo_alt}">
     <figcaption>{photo_cap}</figcaption>
   </figure>
 </div>
@@ -140,9 +140,9 @@ RU = dict(
     desc="Mitya Labs делает Skladen, напечатанный палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал, и skladenOS, систему для него.",
     h1="Палмтоп из телефона и клавиатуры",
     lede="Mitya Labs делает Skladen: напечатанный на 3D-принтере палмтоп, который превращает Xiaomi Pocophone F1 в карманный терминал в форме ноутбука, и skladenOS, систему для него.",
-    status="<strong>Skladen 2.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.",
-    photo_alt="Напечатанный Skladen 2.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в прозрачной крышке, клавиатура Jomaa в основании",
-    photo_cap="Skladen 2.1.0: Pocophone F1 в прозрачной крышке из PETG, клавиатура Jomaa в основании. На экране рабочая сборка, из которой вырастает skladenOS.",
+    status="<strong>Skladen 2.1.1 напечатан и собран.</strong> skladenOS в разработке: готовых образов пока нет.",
+    photo_alt="Напечатанный Skladen 2.1.1 на столе, открытый: Pocophone F1 под рамкой на защёлках в бирюзовой крышке, клавиатура Jomaa в прозрачном основании",
+    photo_cap="Skladen 2.1.1: Pocophone F1 в бирюзовой крышке из PETG, клавиатура Jomaa в прозрачном основании. На экране рабочая сборка, из которой вырастает skladenOS.",
     cfg_h="Конфигуратор", cfg=configurator("Выберите детали Skladen 2 (крышку, рамку, базу) и скачайте файл для печати: STL или 3MF.", "Skladen 2 в сборке, можно вращать и раскрывать", "Открыть конфигуратор →", "ru"),
     s5h="Основа и права", s6h="Где следить",
     foot="© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.",
@@ -156,6 +156,7 @@ RU["sk"] = "\n".join([
         ("Масса", "около 403 г по модели")], "feat"),
     "<h3>Версии</h3>",
     table(("Версия", "Что это", "Дата"), [
+        ('<a href="%s/tree/v2.1.1">2.1.1</a>' % SK, "Рёбра обжима и язычки кнопок в крышке с рамкой; напечатан", "2026-10-24"),
         ('<a href="%s/tree/v2.1.0">2.1.0</a>' % SK, "Skladen 2 с рамкой на защёлках; напечатан", "2026-10-20"),
         ('<a href="%s/tree/v2.0.0">2.0.0</a>' % SK, "Skladen 2 под Pocophone F1, телефон на ленте; напечатан", "2026-10-06"),
         ('<a href="%s/tree/v1.0.0">1.0.0</a>' % SK, "Skladen 1 под Pixel 3a XL; напечатан", "2026-10-02")]),
@@ -198,9 +199,9 @@ EN = dict(
     desc="Mitya Labs builds Skladen, a printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable terminal, and skladenOS, an operating system for it.",
     h1="A palmtop made of a phone and a keyboard",
     lede="Mitya Labs builds Skladen, a 3D-printed palmtop that turns a Xiaomi Pocophone F1 into a pocketable laptop-shaped terminal, and skladenOS, the system for it.",
-    status="<strong>Skladen 2.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.",
-    photo_alt="The printed Skladen 2.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a transparent lid, the Jomaa keyboard in the base",
-    photo_cap="Skladen 2.1.0: a Pocophone F1 in a transparent PETG lid, the Jomaa keyboard in the base. The screen runs the working build skladenOS grows out of.",
+    status="<strong>Skladen 2.1.1 is printed and assembled.</strong> skladenOS is in development: there are no images yet.",
+    photo_alt="The printed Skladen 2.1.1 on a desk, open: a Pocophone F1 under the clip-on bezel in a teal lid, the Jomaa keyboard in a clear base",
+    photo_cap="Skladen 2.1.1: a Pocophone F1 in a teal PETG lid, the Jomaa keyboard in a clear base. The screen runs the working build skladenOS grows out of.",
     cfg_h="Configurator", cfg=configurator("Pick the Skladen 2 parts (lid, frame, base) and download a print file: STL or 3MF.", "Skladen 2 assembled: rotate it, open and close the lid", "Open the configurator →", "en"),
     s5h="Basis and rights", s6h="Follow along",
     foot="© 2026 Mitya Labs. This page is updated as the projects move along.",
@@ -214,6 +215,7 @@ EN["sk"] = "\n".join([
         ("Mass", "about 403 g by the model")], "feat"),
     "<h3>Versions</h3>",
     table(("Version", "What", "Date"), [
+        ('<a href="%s/tree/v2.1.1">2.1.1</a>' % SK, "Crush ribs and button tongues in the bezel lid; printed", "2026-10-24"),
         ('<a href="%s/tree/v2.1.0">2.1.0</a>' % SK, "Skladen 2 with the clip-on bezel; printed", "2026-10-20"),
         ('<a href="%s/tree/v2.0.0">2.0.0</a>' % SK, "Skladen 2 for the Pocophone F1, phone held by tape; printed", "2026-10-06"),
         ('<a href="%s/tree/v1.0.0">1.0.0</a>' % SK, "Skladen 1 for the Pixel 3a XL; printed", "2026-10-02")]),

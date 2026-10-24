@@ -8,10 +8,10 @@
   --ink: #14151C;
   --muted: #474B5B;
   --crease: rgba(20, 21, 28, .16);
-  --fold-light: #F5B800;
-  --fold-mid: #D9A000;
-  --fold-dark: #B8860B;
-  --link: #7A5600;
+  --fold-light: #1FB5AE;
+  --fold-mid: #14968F;
+  --fold-dark: #0E7A75;
+  --link: #0A5C58;
   --focus: #14151C;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Source Serif 4", Georgia, serif;
@@ -25,11 +25,11 @@
     --ink: #E8E9EF;
     --muted: #A5A9BA;
     --crease: rgba(255, 255, 255, .14);
-    --fold-light: #FFE55C;
-    --fold-mid: #E0C247;
-    --fold-dark: #B89B33;
-    --link: #FFE55C;
-    --focus: #FFE55C;
+    --fold-light: #5EEADB;
+    --fold-mid: #3FCFC0;
+    --fold-dark: #2AA79B;
+    --link: #5EEADB;
+    --focus: #5EEADB;
   }
 }
 
