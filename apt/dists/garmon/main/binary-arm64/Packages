@@ -1,0 +1,177 @@
+Package: skladenos-archive-keyring
+Version: 0.1.1
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 15
+Priority: optional
+Section: misc
+Filename: pool/main/s/skladenos-archive-keyring/skladenos-archive-keyring_0.1.1_all.deb
+Size: 2712
+SHA256: 4ce06f8996ee09035ee54f3991372406975949eb20e3dc267cb9d3d859a3449f
+SHA1: d3b500f286db42157178a9d714fee8b4844170cf
+MD5sum: 66a1459053b3d5553c7133b27a90a787
+Description: skladenOS: ключ подписи и источник apt-репозитория
+ Открытый ключ репозитория skladenOS (/usr/share/keyrings/skladenos-archive-keyring.gpg) и файл источника
+ /etc/apt/sources.list.d/skladenos.sources (по умолчанию выключен до публикации репозитория).
+
+Package: skladenos-config
+Version: 0.1.2
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 193
+Depends: skladenos-wallpapers, skladenos-fonts, sxmo-utils, jq, python3, sudo, systemd, swaybg, network-manager
+Recommends: fastfetch, skladenos-artwork, libssc-bin, hexagonrpcd, openssh-server
+Conflicts: doas, superd
+Provides: doas
+Priority: optional
+Section: misc
+Filename: pool/main/s/skladenos-config/skladenos-config_0.1.2_all.deb
+Size: 32772
+SHA256: 3cf6dc9489e2f5b0b69e0ebf306d24cf61e210804c7412e59ebc71c39cd21b4b
+SHA1: 71c99615308483c78a7d1061a399bcbb807df5ee
+MD5sum: 50e4b92e9c8b3301cc674dd8d29dd781
+Description: skladenOS: системные настройки Poco F1 (Xiaomi beryllium) для Mobian + SXMO
+ Профиль устройства SXMO, обходы для SDM845 (ADSP/SLPI, звук, USB-гаджет, Wi-Fi powersave,
+ вырез экрана), планы питания, SXMO как сессия по умолчанию, шимы superctl/doas.
+ Пользовательские настройки SXMO (sway, хуки, меню) ставит skladenos-apply (слой B).
+
+Package: skladenos-containers
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 8
+Depends: podman, uidmap, netavark, passt, fuse-overlayfs
+Priority: optional
+Section: metapackages
+Filename: pool/main/s/skladenos-containers/skladenos-containers_0.1.0_all.deb
+Size: 1716
+SHA256: 355835115b1a227340f03ed1688a6cc2a5f02be440f3912cbc8538a65949dee5
+SHA1: 5a482386320700a676912e7371085a38f6169545
+MD5sum: ec47ebf67c28a1c4e28e9136594cdac8
+Description: skladenOS: контейнеры (podman, rootless)
+ Ставит podman и rootless-окружение (uidmap, netavark, passt, fuse-overlayfs). Нужен, например, для Steam/FEX в контейнере.
+
+Package: skladenos-dev
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 8
+Depends: build-essential, meson, ninja-build, pkg-config, python3-venv, python3-pip
+Priority: optional
+Section: metapackages
+Filename: pool/main/s/skladenos-dev/skladenos-dev_0.1.0_all.deb
+Size: 1720
+SHA256: 21d9d1df6c30b4d8b10da025ab0d4d15f584ecc78b8a8d1dadecbd85a640d133
+SHA1: 8fd4798e97e9cffeae79cc44047e55ea0e1694ee
+MD5sum: d7f367d2cb495fbb8f20c42f78fe09a6
+Description: skladenOS: сборка программ на телефоне
+ Ставит компилятор и сборочные инструменты Debian (build-essential, meson, ninja-build, pkg-config, python3-venv, python3-pip).
+
+Package: skladenos-emu-jornada720
+Version: 0.1.1
+Architecture: arm64
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 30847
+Depends: libc6 (>= 2.43), libglib2.0-0t64 (>= 2.78.0), libsdl2-2.0-0 (>= 2.0.12), libslirp0 (>= 4.9.1), libx11-6, zlib1g (>= 1:1.2.0), python3, sxmo-utils
+Recommends: php-cli
+Priority: optional
+Section: otherosfs
+Filename: pool/main/s/skladenos-emu-jornada720/skladenos-emu-jornada720_0.1.1_arm64.deb
+Size: 3610080
+SHA256: 74e0a17b7fb6bef27dd5108a85a4d34e96b8da521b11d3d51b436b20506a03e3
+SHA1: 1e312110f066e732f99f24112bd7048ceac1f19d
+MD5sum: 348e550e0b5923fd235745ade339eb86
+Description: skladenOS: эмулятор HP Jornada 720 (Windows CE) на QEMU
+ QEMU с машиной HP Jornada 720 (StrongARM SA-1110) из форка qemu-jornada720: сохранение состояния при выходе,
+ карта CompactFlash (образ или папка), сеть, сглаженное масштабирование. Лежит отдельно от системного qemu
+ (/usr/lib/skladenos/jornada720). ROM в пакет не входит: нужен свой, ~/roms/jornada720.bin.
+ Запуск: пункт «Jornada 720» в меню Scripts или skladenos-jornada720.
+
+Package: skladenos-emu-psion
+Version: 0.1.0
+Architecture: arm64
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 550
+Depends: libasound2t64 (>= 1.0.16), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt5core5t64 (>= 5.15.1), libqt5gui5t64 (>= 5.14.1) | libqt5gui5-gles (>= 5.14.1), libqt5widgets5t64 (>= 5.6.0~beta), libstdc++6 (>= 11), qtwayland5, sxmo-utils
+Recommends: fonts-symbola
+Priority: optional
+Section: otherosfs
+Filename: pool/main/s/skladenos-emu-psion/skladenos-emu-psion_0.1.0_arm64.deb
+Size: 115416
+SHA256: 7b40ab3e4d535635c05995db72a28bdfbbade6996f2e57645dd72e351211a7c0
+SHA1: bacdf2813960d2814e5cca33c0778d0d3906cf72
+MD5sum: 6848c46e2f3aae8592c5e6df4fa9f878
+Description: skladenOS: эмулятор Psion 5mx (EPOC) — WindEmu
+ WindEmu (Qt5) из форка DmitriiTrifonov/WindEmu, ветка pmos: запуск под Wayland, сохранение состояния при выходе,
+ слот CompactFlash (папка или образ), русская раскладка, звук ALSA. ROM Psion в пакет не входит: нужен свой, ~/roms/5mx_eng.bin.
+ Запуск: пункт «Psion 5mx» в меню Scripts или skladenos-psion.
+
+Package: skladenos-firstboot
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 151
+Depends: python3, python3-textual, bluez, network-manager, sudo, passwd, sxmo-utils, foot, wtype
+Recommends: skladenos-config
+Priority: optional
+Section: misc
+Filename: pool/main/s/skladenos-firstboot/skladenos-firstboot_0.1.0_all.deb
+Size: 33628
+SHA256: 934e804dbdd319d61af2c3021bebf471376ed8a9a6131ce905a4927ca7d378b4
+SHA1: f6a886e26ce8deacfc1ebe6c6a87d626ff71f262
+MD5sum: 5959bc078cb0491b44b40d8a92b66473
+Description: skladenOS: мастер первой загрузки (Bluetooth-клавиатура, Wi-Fi, пользователь и пароль)
+ TUI на Textual в foot для сенсорного экрана SXMO (тапы приходят как клики мыши). Запускается из sway,
+ пока нет /var/lib/skladenos/firstboot-done: подключает Bluetooth-клавиатуру, Wi-Fi, предлагает сменить
+ имя пользователя и пароль (через root-helper по sudo; переименование выполняется на следующей загрузке).
+ Флаг firstboot-done снимает ограничение SSH-входа по паролю только из локальных сетей.
+
+Package: skladenos-fonts
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 5328
+Priority: optional
+Section: fonts
+Filename: pool/main/s/skladenos-fonts/skladenos-fonts_0.1.0_all.deb
+Size: 1416192
+SHA256: c0f8d68d57413edba6ee7a59eb8923514a16f9d16e7c8aebac7b6cac2c2c9d0a
+SHA1: f48146007d8cb7a2650f3a42933446fdc1fe96b2
+MD5sum: f7fe3638188825e9223c6d140434854e
+Description: skladenOS: DejaVu Sans Mono Nerd Font для значков SXMO
+ Шрифт DejaVu Sans Mono, пропатченный Nerd Fonts (Regular, Bold). Нужен для глифов в
+ sxmo_hook_icons.sh (Material Design U+F0xxx и др.). Debian-пакет fonts-nerd-symbols эти
+ глифы не покрывает (проверено на телефоне), поэтому шрифт лежит отдельным пакетом.
+
+Package: skladenos-tools
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 8
+Depends: htop, fastfetch, git, v4l-utils, vulkan-tools
+Priority: optional
+Section: metapackages
+Filename: pool/main/s/skladenos-tools/skladenos-tools_0.1.0_all.deb
+Size: 1768
+SHA256: 4efeaaf5d3ad93aeb41c7e43dfc4715605d101258e95d66b7868bfd71d9e76de
+SHA1: 8d893c3fc0930912d595bc245bbd6cad6d940db0
+MD5sum: c187b1dc4645b67e517b672377a1b253
+Description: skladenOS: повседневные инструменты (htop, git, fastfetch…)
+ Ставит из Debian: htop, fastfetch, git, v4l-utils, vulkan-tools. Удаление метапакета оставляет эти программы (apt autoremove уберёт их, если больше не нужны).
+
+Package: skladenos-wallpapers
+Version: 0.1.0
+Architecture: all
+Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
+Installed-Size: 63
+Priority: optional
+Section: x11
+Filename: pool/main/s/skladenos-wallpapers/skladenos-wallpapers_0.1.0_all.deb
+Size: 29748
+SHA256: 1bd8fcf524fdafa6391a495f3196381362263dd62f5bf64ae9dcb4eb6aaf2bd3
+SHA1: 3363fb1e6a74119c6630b4721ba2576cbdca2aa8
+MD5sum: 035a0e147b4816259d00db2279eefbb9
+Description: skladenOS: свободные обои (CC BY-SA 4.0)
+ Обои «Skladen v2.1» без логотипа (портретные и альбомные) под лицензией CC BY-SA 4.0.
+ Фирменные обои с логотипом и сам логотип — в пакете skladenos-artwork (все права защищены).
+

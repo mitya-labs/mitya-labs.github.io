@@ -1,0 +1,29 @@
+Origin: skladenOS
+Label: skladenOS
+Suite: stable
+Codename: garmon
+Date: Sat, 24 Oct 2026 13:30:35 UTC
+Architectures: arm64
+Components: main non-free
+Description: skladenOS: пакеты для Poco F1 (Mobian + SXMO)
+MD5Sum:
+ 70d5bf34077a2bcd9a7704ea25e71d8c 9855 main/binary-arm64/Packages
+ 082c6bb612cfacedaf4e273b4e13fa21 3901 main/binary-arm64/Packages.gz
+ ac1d9bc33d91a6bf6ac8212e33ad9158 155 main/binary-arm64/Release
+ 886fb4a07e0df892cf209ac30607d4e9 965 non-free/binary-arm64/Packages
+ 869e67beb8de7f8fd239ad76c9893db7 631 non-free/binary-arm64/Packages.gz
+ 1f0f422243da871f14115743735848d1 159 non-free/binary-arm64/Release
+SHA1:
+ 4e0cfe4740272a5eb59d75b9cf582b155399e2a4 9855 main/binary-arm64/Packages
+ d189865222b05ef7a6d9badb3a1f5a27b1298a14 3901 main/binary-arm64/Packages.gz
+ 1030016ac7bdfd45d743de221aab20d81dd5c960 155 main/binary-arm64/Release
+ 46a36cd8a445c08d24a62c8e1021d05b444110c8 965 non-free/binary-arm64/Packages
+ 0fdc785bb8fec586517b1e99af46290c9d40535a 631 non-free/binary-arm64/Packages.gz
+ fa30f0b0d87a8f54144f5bde62d48f2ddf42926e 159 non-free/binary-arm64/Release
+SHA256:
+ 041b7807d6cfd6e5cece4107d722f0a6465a2a3ba463d46401a1bb01cc00c4f6 9855 main/binary-arm64/Packages
+ 5f57d1379f649006077c9edb006da86000137d51e919626a2a544ec1ac85b54e 3901 main/binary-arm64/Packages.gz
+ 00f0790c11650aed5abe1c7584c9f94915233008d1c566f9b87c92bd6f2af914 155 main/binary-arm64/Release
+ b78357456f236681cb232411d8ab385720fd3e722951248c4096f432f1b4ecad 965 non-free/binary-arm64/Packages
+ 7c32013b1845953b6f2db45d6e7e958916a4f6c6575456d86f46365b6e20688c 631 non-free/binary-arm64/Packages.gz
+ cd5886b5087ff54f485585202358ae37bd87fc1c9063e70557b87dddbe1d23b1 159 non-free/binary-arm64/Release

@@ -1,0 +1,6 @@
+Archive: stable
+Component: main
+Origin: skladenOS
+Label: skladenOS
+Architecture: arm64
+Description: skladenOS: пакеты для Poco F1 (Mobian + SXMO)
