@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skladenOS: система для Skladen и Poco F1 — Mitya Labs</title>
+<meta name="description" content="skladenOS: Mobian и SXMO для Xiaomi Poco F1 — что работает, как собрать образ, пакеты, эмуляторы и apt-репозиторий.">
+<meta name="theme-color" content="#E9EBEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0E15" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="skladenOS: система для Skladen и Poco F1 — Mitya Labs">
+<meta property="og:description" content="skladenOS: Mobian и SXMO для Xiaomi Poco F1 — что работает, как собрать образ, пакеты, эмуляторы и apt-репозиторий.">
+<meta property="og:image" content="https://mitya-labs.github.io/assets/img/skladen2-photo.jpg">
+<link rel="canonical" href="https://mitya-labs.github.io/skladenos/">
+<link rel="alternate" hreflang="ru" href="https://mitya-labs.github.io/skladenos/">
+<link rel="alternate" hreflang="en" href="https://mitya-labs.github.io/en/skladenos/">
+<link rel="alternate" hreflang="x-default" href="https://mitya-labs.github.io/en/skladenos/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a href="../" class="brand" aria-label="Mitya Labs"><img src="../assets/mitya-labs.svg" alt="Mitya Labs" width="209" height="99"></a>
+  <nav aria-label="Разделы и язык">
+    <a href="../#skladen">Skladen</a>
+    <a href="../#configurator">Конфигуратор</a>
+    <a href="./" aria-current="page">skladenOS</a>
+    <a href="https://github.com/mitya-labs">GitHub</a>
+    <a href="https://t.me/dorimemmap">Telegram</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Язык"><a href="./" hreflang="ru" lang="ru" data-lang="ru" aria-current="true">RU</a><a href="../en/skladenos/" hreflang="en" lang="en" data-lang="en">EN</a></div>
+</header>
+
+<main>
+<div class="hero" style="grid-template-columns:1fr">
+  <div>
+    <svg class="mark" viewBox="0 0 320 160" role="img" aria-label="Знак skladenOS: четыре сложенные грани"><polygon class="p1" points="0,30 80,0 80,130 0,160"/><polygon class="p2" points="80,0 160,30 160,160 80,130"/><polygon class="p3" points="160,30 240,0 240,130 160,160"/><polygon class="p4" points="240,0 320,30 320,160 240,130"/></svg>
+    <h1>skladenOS</h1>
+    <p class="lede">Система для Skladen и других складных устройств: Mobian (Debian) с оконным менеджером SXMO, ядро 7.2 с нашими патчами зарядки и USB-PD, мастер первой загрузки и набор пакетов.</p>
+    <p class="status"><strong>Исходники и репозиторий пакетов открыты.</strong> Готового образа для скачивания пока нет: его собирают из исходников одной командой.</p>
+  </div>
+</div>
+<section class="cols"><h2>Что это</h2><div class="body"><p>skladenOS — система для Xiaomi Poco F1 (SDM845), в первую очередь в составе палмтопа <a href="../#skladen">Skladen</a>, где экран и клавиатура соединены шарниром. Основа — <a href="https://mobian.org">Mobian</a> (Debian forky) с лёгким интерфейсом <a href="https://sxmo.org">SXMO</a> (sway): жесты, кнопки громкости, внешняя клавиатура. Окна и панели не заходят под вырез и скруглённые углы экрана, даже в полноэкранном режиме.</p></div></section>
+<section class="cols"><h2>Что работает</h2><div class="body"><dl class="feat"><dt>Вырез и углы</dt><dd>Панель и окна отступают от выреза и перестраиваются при повороте экрана.</dd><dt>Кнопки и жесты</dt><dd>Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>.</dd><dt>Первая загрузка</dt><dd>Мастер на 12 языках (английский по умолчанию): Bluetooth-клавиатура, Wi-Fi, имя пользователя и обязательная смена пароля.</dd><dt>USB и зарядка</dt><dd>Роль хоста или устройства выбирается сама; хаб, флешка и клавиатура работают; зарядка по USB-PD.</dd><dt>Питание</dt><dd>Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет».</dd><dt>Раскладки</dt><dd>Английская и русская по CapsLock, экранная клавиатура с кириллицей.</dd><dt>Звук, датчики, сеть</dt><dd>Оба динамика, микрофон, датчики через SLPI на ядре 7.x, Wi-Fi и Bluetooth.</dd><dt>Защита тача</dt><dd>Сторож перезапускает драйвер тачскрина, если касание «зависло».</dd><dt>fastfetch</dt><dd>Показывает логотип skladenOS и название системы.</dd></dl><p class="note">Проверено на Pocophone F1 (панель EBBG) с ядром 7.2: образ, собранный из исходников, прошит и работает. Вариант панели Tianma собирается, но на железе не проверен. SIM не проверялась.</p></div></section>
+<section class="cols"><h2>Первая загрузка</h2><div class="body"><p>Сразу после прошивки вход: пользователь <code>skladen</code>, пароль <code>1234</code>. На экране запускается мастер: выбор языка, поиск Bluetooth-клавиатуры, Wi-Fi, затем имя пользователя и новый пароль. Пока пароль по умолчанию не сменён, вход по SSH разрешён только из локальных сетей. Имя пользователя применяется после перезагрузки.</p></div></section>
+<section class="cols"><h2>Как собрать и прошить</h2><div class="body"><p>Нужны Mac или Linux, Docker, <code>fastboot</code> и разблокированный загрузчик. Образ собирается в Docker из официального rootfs Mobian, наших пакетов и ядра (около пяти минут). Прошивка <strong>стирает весь телефон</strong>.</p><pre><code>git clone https://github.com/mitya-labs/skladenos.git &amp;&amp; cd skladenos
+packages/build.sh skladenos-config        # и так для каждого пакета skladenos-*
+build/image/build.sh build                # образ в out/image/&lt;метка&gt;/ , около 5 минут
+scripts/snapshot-flash out/image/&lt;метка&gt;   # стирает весь телефон!</code></pre><p>Подробности, предварительные условия и «подводные камни»: <a href="https://github.com/mitya-labs/skladenos#быстрый-старт">README в репозитории</a>.</p></div></section>
+<section class="cols"><h2>Пакеты из репозитория</h2><div class="body"><p>Пакеты лежат в подписанном apt-репозитории, релиз <b>garmon</b> (arm64). В образе источник уже включён; на другой системе на Poco F1:</p><pre><code>curl -fsS https://mitya-labs.github.io/apt/skladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null
+sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;'EOF'
+Types: deb
+URIs: https://mitya-labs.github.io/apt/
+Suites: garmon
+Components: main non-free
+Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg
+EOF
+sudo apt update</code></pre><p>Отпечаток ключа подписи: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p><dl class="feat"><dt>skladenos-config</dt><dd>Системные настройки устройства и SXMO, сторож тача, fastfetch.</dd><dt>skladenos-firstboot</dt><dd>Мастер первой загрузки (12 языков).</dd><dt>skladenos-fonts, -wallpapers</dt><dd>Шрифт значков и свободные обои (CC BY-SA 4.0).</dd><dt>skladenos-artwork</dt><dd>Логотип и фирменные обои (компонент <code>non-free</code>, права защищены).</dd><dt>skladenos-archive-keyring</dt><dd>Ключ репозитория и источник apt.</dd><dt>skladenos-emu-jornada720, -emu-psion</dt><dd>Эмуляторы (см. ниже).</dd><dt>skladenos-tools, -dev, -containers</dt><dd>Метапакеты: htop, git, fastfetch…; сборка программ; podman.</dd></dl></div></section>
+<section class="cols"><h2>Эмуляторы</h2><div class="body"><p>HP Jornada 720 (Windows CE, QEMU) и Psion 5mx (EPOC, WindEmu) ставятся пакетами <code>skladenos-emu-jornada720</code> и <code>skladenos-emu-psion</code> и запускаются из меню Scripts в SXMO. ROM в пакеты не входят, нужен свой: <code>~/roms/jornada720.bin</code> и <code>~/roms/5mx_eng.bin</code>. Сборка эмуляторов воспроизводится в Docker из наших форков (<a href="https://github.com/DmitriiTrifonov/qemu-jornada720">qemu-jornada720</a>, <a href="https://github.com/DmitriiTrifonov/WindEmu">WindEmu</a>).</p></div></section>
+<section class="cols"><h2>Основа и права</h2><div class="body fine"><p><strong>skladenOS</strong> основан на <a href="https://mobian.org">Mobian</a> и <a href="https://www.debian.org">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Код открыт под GPL-3.0-or-later, патчи ядра — GPL-2.0-only, свободные обои — CC BY-SA 4.0; оконный менеджер SXMO распространяется под AGPL-3.0. Лицензия каждого файла описана по стандарту REUSE. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне.</p><p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Правила использования названий и логотипа — в <a href="https://github.com/mitya-labs/skladenos/blob/main/TRADEMARK.md">TRADEMARK.md</a>.</p></div></section>
+<section class="cols"><h2>Что дальше</h2><div class="body"><ul class="road"><li class="done">Образ собирается и прошивается из исходников</li><li class="done">Мастер первой загрузки на 12 языках</li><li class="done">Свой подписанный репозиторий пакетов, эмуляторы пакетами</li><li class="done">Публичный репозиторий, лицензии по REUSE</li><li>Сборка ядра и образа в CI на GitHub</li><li>Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)</li><li>Образ для скачивания</li></ul></div></section>
+<section class="cols"><h2>Ссылки</h2><div class="body"><p>Репозиторий: <a href="https://github.com/mitya-labs/skladenos">github.com/mitya-labs/skladenos</a>. Пакеты: <a href="https://mitya-labs.github.io/apt/">mitya-labs.github.io/apt</a>. Вопросы и ошибки — <a href="https://github.com/mitya-labs/skladenos/issues">issues</a>. Новости — <a href="https://t.me/dorimemmap">Telegram-канал</a>. Проекты ведёт организация <a href="https://github.com/mitya-labs">mitya-labs</a>.</p></div></section>
+</main>
+
+<footer>
+  <p>© 2026 Mitya Labs. Страница обновляется по мере продвижения проектов.</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll("a[data-lang]").forEach(function (a) {
+  a.addEventListener("click", function () { try { localStorage.setItem("lang", a.getAttribute("data-lang")); } catch (e) {} });
+});
+</script>
+</body>
+</html>

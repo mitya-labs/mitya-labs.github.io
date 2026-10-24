@@ -149,3 +149,7 @@ a.cta:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
 
 pre { font: 400 .85em var(--mono); background: var(--sheet); padding: .8rem 1rem; border-radius: 3px; overflow-x: auto; }
 pre code { background: none; padding: 0; font: inherit; }
+
+a.btn { display: inline-block; padding: .55rem .9rem; border: 1px solid currentColor; border-radius: 3px; font-weight: 700; text-decoration: none; }
+a.btn:hover, a.btn:focus-visible { background: var(--sheet); }
+header.top nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .25em; }

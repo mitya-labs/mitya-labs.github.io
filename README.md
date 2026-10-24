@@ -2,7 +2,8 @@
 
 Сайт проекта [skladenOS](https://mitya-labs.github.io/) (организация mitya-labs): статические страницы для GitHub Pages, без сборки.
 
-- `index.html` — русская версия, `en/index.html` — английская, `404.html` — страница ошибки.
+- `index.html` — русская версия, `en/index.html` — английская, `skladenos/index.html` и `en/skladenos/index.html` — отдельная страница skladenOS (ru/en), `404.html` — страница ошибки. Страницы генерирует `python3 tools/build.py`, HTML руками не правится.
+- `apt/` — apt-репозиторий skladenOS (релиз garmon), его выкладывает `repo/publish.sh` из репозитория skladenos.
 - `style.css` — единый стиль, светлая и тёмная тема по настройке системы.
 - `assets/` — логотип, значок и шрифт JetBrains Mono (подмножество Latin + Cyrillic, лицензия SIL OFL 1.1, `assets/fonts/OFL.txt`).
 

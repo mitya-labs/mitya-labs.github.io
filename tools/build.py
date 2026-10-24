@@ -170,32 +170,8 @@ RU["sk"] = "\n".join([
 RU["os"] = "\n".join([
     MARK.format(alt="Знак skladenOS: четыре сложенные грани"),
     "<p>skladenOS — система для Skladen и других складных устройств, где экран и клавиатура соединены шарниром. Это Mobian (Debian) с оконным менеджером SXMO: лёгкий интерфейс, которым управляют жестами, кнопками громкости и внешней клавиатурой. Система учитывает вырез экрана и скруглённые углы: окна и панели не заходят под челку, даже в полноэкранном режиме.</p>",
-    '<p class="status">Исходники и репозиторий пакетов открыты. Готового образа для скачивания пока нет: образ собирается из исходников одной командой (Docker), инструкция в <a href="%s">репозитории</a>.</p>' % SO,
-    "<h3>Что уже работает</h3>",
-    dl([("Вырез и углы", "Панель и окна отступают от выреза и перестраиваются при повороте экрана."),
-        ("Кнопки и жесты", "Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>."),
-        ("Первая загрузка", "Мастер на 12 языках: Bluetooth-клавиатура, Wi-Fi, имя пользователя и обязательная смена пароля."),
-        ("USB", "Роль хоста или устройства выбирается сама: хаб, флешка и клавиатура работают, с компьютером поднимается USB-сеть."),
-        ("Питание", "Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет»."),
-        ("Раскладки", "Английская и русская по CapsLock, экранная клавиатура с кириллицей."),
-        ("Звук и датчики", "Оба динамика, датчики через SLPI на ядре 7.x."),
-        ("Эмуляторы", "HP Jornada 720 (Windows CE) и Psion 5mx ставятся пакетами из нашего репозитория; ROM нужен свой.")]),
-    '<p class="note">Проверено на Pocophone F1 с ядром 7.2: образ, собранный из исходников, прошит и работает.</p>',
-    "<h3>Как собирается</h3>",
-    steps([("Ядро", "Ядро Mobian для SDM845 из исходников и наши патчи: Type-C и зарядка PD."),
-           ("Пакеты", "Настройки устройства и SXMO, мастер первой загрузки, шрифты и эмуляторы оформлены как deb-пакеты."),
-           ("Образ", "Docker собирает образ из официального rootfs Mobian, наших пакетов и ядра: около пяти минут."),
-           ("Прошивка", "Образ прошивается на телефон через fastboot.")]),
-    "<p>Версии ядра и базового образа зафиксированы, сборка воспроизводится из исходников; перенос в CI на GitHub впереди.</p>",
-    "<h3>Пакеты из репозитория</h3>",
-    "<p>Пакеты skladenOS лежат в подписанном apt-репозитории, релиз <b>garmon</b> (arm64). В образе источник уже включён; на другой системе на Poco F1:</p>",
-    '<pre><code>curl -fsS %sskladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null\n'
-    'sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;\'EOF\'\n'
-    'Types: deb\nURIs: %s\nSuites: garmon\nComponents: main non-free\n'
-    'Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg\nEOF\nsudo apt update</code></pre>' % (APT, APT),
-    "<p>Отпечаток ключа подписи: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>",
-    "<h3>Что дальше</h3>",
-    road(["Имя, организация и чистый репозиторий", "Сборка ядра с патчами, пакеты настроек, логотип", "Образ собирается и прошивается из исходников", "Мастер первой загрузки на 12 языках", "Свой подписанный репозиторий пакетов и эмуляторы пакетами", "Публичный репозиторий и лицензия кода", "Сборка ядра и образа в CI", "Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)", "Образ для скачивания"], 6),
+    '<p class="status">Исходники и репозиторий пакетов открыты. Готового образа для скачивания пока нет: образ собирается из исходников одной командой (Docker).</p>',
+    '<p><a class="btn" href="skladenos/">Страница skladenOS: что работает, как собрать, пакеты и эмуляторы →</a></p>',
 ])
 RU["s5"] = "".join([
     "<p><strong>Skladen:</strong> конструкция открыта под CERN-OHL-S-2.0, исходником считается Python-модель.</p>",
@@ -238,32 +214,8 @@ EN["sk"] = "\n".join([
 EN["os"] = "\n".join([
     MARK.format(alt="skladenOS mark: four folded panels"),
     "<p>skladenOS is the system for Skladen and other folding devices where the screen and the keyboard are joined by a hinge. It is Mobian (Debian) with the SXMO window manager: a light interface driven by gestures, volume keys and an external keyboard. It respects the display notch and rounded corners: windows and bars never go under the cutout, even in fullscreen.</p>",
-    '<p class="status">The source and the package repository are open. There is no ready-made image to download yet: the image is built from source with one command (Docker), see the <a href="%s">repository</a>.</p>' % SO,
-    "<h3>What works today</h3>",
-    dl([("Notch and corners", "The bar and windows keep clear of the cutout and adjust when the screen rotates."),
-        ("Buttons and gestures", "Power, volume, edge gestures; <kbd>Super</kbd>+<kbd>Esc</kbd> works from an external keyboard."),
-        ("First boot", "A wizard in 12 languages: Bluetooth keyboard, Wi-Fi, user name and a required password change."),
-        ("USB", "Host or device role is picked automatically: a hub, a flash drive and a keyboard work; USB networking comes up with a computer."),
-        ("Power", "“Balanced”, “Eco”, “Night” and “Performance” profiles from the menu, plus a “keep screen awake” mode."),
-        ("Layouts", "English and Russian switched with CapsLock, on-screen keyboard with Cyrillic."),
-        ("Audio and sensors", "Both speakers, sensors through the SLPI on kernel 7.x."),
-        ("Emulators", "HP Jornada 720 (Windows CE) and Psion 5mx install as packages from our repository; bring your own ROM.")]),
-    '<p class="note">Verified on a Pocophone F1 with kernel 7.2: an image built from source is flashed and runs.</p>',
-    "<h3>How it is built</h3>",
-    steps([("Kernel", "The Mobian SDM845 kernel from source plus our patches: Type-C and PD charging."),
-           ("Packages", "Device and SXMO settings, the first-boot wizard, fonts and emulators are shipped as deb packages."),
-           ("Image", "Docker assembles an image from the official Mobian rootfs, our packages and the kernel: about five minutes."),
-           ("Flashing", "The image is flashed to the phone with fastboot.")]),
-    "<p>Kernel and base image versions are pinned and the build reproduces from source; moving it to CI on GitHub is still ahead.</p>",
-    "<h3>Packages from the repository</h3>",
-    "<p>skladenOS packages live in a signed apt repository, release <b>garmon</b> (arm64). The image already has the source enabled; on another system on a Poco F1:</p>",
-    '<pre><code>curl -fsS %sskladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null\n'
-    'sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;\'EOF\'\n'
-    'Types: deb\nURIs: %s\nSuites: garmon\nComponents: main non-free\n'
-    'Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg\nEOF\nsudo apt update</code></pre>' % (APT, APT),
-    "<p>Signing key fingerprint: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>",
-    "<h3>What is next</h3>",
-    road(["Name, organization and a clean repository", "Kernel build with patches, settings packages, logo", "The image builds and flashes from source", "First-boot wizard in 12 languages", "Our own signed package repository and emulators as packages", "Public repository and the code license", "Kernel and image build in CI", "Testing with both Poco F1 panel variants (ebbg and tianma)", "A downloadable image"], 6),
+    '<p class="status">The source and the package repository are open. There is no ready-made image to download yet: the image is built from source with one command (Docker).</p>',
+    '<p><a class="btn" href="skladenos/">The skladenOS page: what works, how to build, packages and emulators →</a></p>',
 ])
 EN["s5"] = "".join([
     "<p><strong>Skladen:</strong> the design is open under CERN-OHL-S-2.0; the Python model counts as the source.</p>",
@@ -273,9 +225,167 @@ EN["s5"] = "".join([
 EN["s6"] = "<p>The projects are run by the <a href=\"%s\">mitya-labs</a> organization on GitHub. The <a href=\"%s\">Skladen</a> and <a href=\"%s\">skladenOS</a> repositories are open. News and notes along the way are in the <a href=\"%s\">Telegram channel</a>.</p>" % (GH, SK, SO, TG)
 
 
+OS_PAGE = """<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<meta name="theme-color" content="#E9EBEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0E15" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{site}assets/img/skladen2-photo.jpg">
+<link rel="canonical" href="{site}{path}">
+<link rel="alternate" hreflang="ru" href="{site}skladenos/">
+<link rel="alternate" hreflang="en" href="{site}en/skladenos/">
+<link rel="alternate" hreflang="x-default" href="{site}en/skladenos/">
+<link rel="icon" href="{up}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png">
+<link rel="preload" href="{up}assets/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{up}style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a href="{home}" class="brand" aria-label="Mitya Labs"><img src="{up}assets/mitya-labs.svg" alt="Mitya Labs" width="209" height="99"></a>
+  <nav aria-label="{navlabel}">
+    <a href="{home}#skladen">Skladen</a>
+    <a href="{home}#configurator">{cfg_h}</a>
+    <a href="./" aria-current="page">skladenOS</a>
+    <a href="{gh}">GitHub</a>
+    <a href="{tg}">Telegram</a>
+  </nav>
+  <div class="lang" role="group" aria-label="{langlabel}"><a href="{ru_href}" hreflang="ru" lang="ru" data-lang="ru"{ru_cur}>RU</a><a href="{en_href}" hreflang="en" lang="en" data-lang="en"{en_cur}>EN</a></div>
+</header>
+
+<main>
+<div class="hero" style="grid-template-columns:1fr">
+  <div>
+    {mark}
+    <h1>skladenOS</h1>
+    <p class="lede">{lede}</p>
+    <p class="status">{status}</p>
+  </div>
+</div>
+{sections}
+</main>
+
+<footer>
+  <p>{foot}</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll("a[data-lang]").forEach(function (a) {{
+  a.addEventListener("click", function () {{ try {{ localStorage.setItem("lang", a.getAttribute("data-lang")); }} catch (e) {{}} }});
+}});
+</script>
+</body>
+</html>
+"""
+
+
+def sec(title, body, cls="body", sid=""):
+    return '<section class="cols"%s><h2>%s</h2><div class="%s">%s</div></section>' % (' id="%s"' % sid if sid else "", title, cls, body)
+
+
+APT_CMD = ('<pre><code>curl -fsS %sskladenos-archive-keyring.gpg | sudo tee /usr/share/keyrings/skladenos-archive-keyring.gpg &gt;/dev/null\n'
+           'sudo tee /etc/apt/sources.list.d/skladenos.sources &gt;/dev/null &lt;&lt;\'EOF\'\n'
+           'Types: deb\nURIs: %s\nSuites: garmon\nComponents: main non-free\n'
+           'Signed-By: /usr/share/keyrings/skladenos-archive-keyring.gpg\nEOF\nsudo apt update</code></pre>') % (APT, APT)
+BUILD_CMD = ('<pre><code>git clone %s.git &amp;&amp; cd skladenos\n'
+             'packages/build.sh skladenos-config        # и так для каждого пакета skladenos-*\n'
+             'build/image/build.sh build                # образ в out/image/&lt;метка&gt;/ , около 5 минут\n'
+             'scripts/snapshot-flash out/image/&lt;метка&gt;   # стирает весь телефон!</code></pre>') % SO
+BUILD_CMD_EN = BUILD_CMD.replace("# и так для каждого пакета skladenos-*", "# repeat for each skladenos-* package").replace("# образ в out/image/&lt;метка&gt;/ , около 5 минут", "# image in out/image/&lt;label&gt;/, about 5 minutes").replace("out/image/&lt;метка&gt;   # стирает весь телефон!", "out/image/&lt;label&gt;   # erases the whole phone!")
+
+RU_OS_PAGE = dict(
+    lang="ru", path="skladenos/", up="../", home="../", ru_href="./", en_href="../en/skladenos/", ru_cur=' aria-current="true"', en_cur="",
+    langlabel="Язык", navlabel="Разделы и язык", cfg_h=RU["cfg_h"], foot=RU["foot"],
+    title="skladenOS: система для Skladen и Poco F1 — Mitya Labs",
+    desc="skladenOS: Mobian и SXMO для Xiaomi Poco F1 — что работает, как собрать образ, пакеты, эмуляторы и apt-репозиторий.",
+    mark=MARK.format(alt="Знак skladenOS: четыре сложенные грани"),
+    lede="Система для Skladen и других складных устройств: Mobian (Debian) с оконным менеджером SXMO, ядро 7.2 с нашими патчами зарядки и USB-PD, мастер первой загрузки и набор пакетов.",
+    status="<strong>Исходники и репозиторий пакетов открыты.</strong> Готового образа для скачивания пока нет: его собирают из исходников одной командой.",
+)
+RU_OS_PAGE["sections"] = "\n".join([
+    sec("Что это", "<p>skladenOS — система для Xiaomi Poco F1 (SDM845), в первую очередь в составе палмтопа <a href=\"../#skladen\">Skladen</a>, где экран и клавиатура соединены шарниром. Основа — <a href=\"https://mobian.org\">Mobian</a> (Debian forky) с лёгким интерфейсом <a href=\"https://sxmo.org\">SXMO</a> (sway): жесты, кнопки громкости, внешняя клавиатура. Окна и панели не заходят под вырез и скруглённые углы экрана, даже в полноэкранном режиме.</p>"),
+    sec("Что работает", dl([
+        ("Вырез и углы", "Панель и окна отступают от выреза и перестраиваются при повороте экрана."),
+        ("Кнопки и жесты", "Питание, громкость, жесты по краям экрана; с внешней клавиатуры работает <kbd>Super</kbd>+<kbd>Esc</kbd>."),
+        ("Первая загрузка", "Мастер на 12 языках (английский по умолчанию): Bluetooth-клавиатура, Wi-Fi, имя пользователя и обязательная смена пароля."),
+        ("USB и зарядка", "Роль хоста или устройства выбирается сама; хаб, флешка и клавиатура работают; зарядка по USB-PD."),
+        ("Питание", "Режимы «Баланс», «Экономия», «Ночь» и «Производительность» из меню, режим «экран не гаснет»."),
+        ("Раскладки", "Английская и русская по CapsLock, экранная клавиатура с кириллицей."),
+        ("Звук, датчики, сеть", "Оба динамика, микрофон, датчики через SLPI на ядре 7.x, Wi-Fi и Bluetooth."),
+        ("Защита тача", "Сторож перезапускает драйвер тачскрина, если касание «зависло»."),
+        ("fastfetch", "Показывает логотип skladenOS и название системы.")]) +
+        '<p class="note">Проверено на Pocophone F1 (панель EBBG) с ядром 7.2: образ, собранный из исходников, прошит и работает. Вариант панели Tianma собирается, но на железе не проверен. SIM не проверялась.</p>'),
+    sec("Первая загрузка", "<p>Сразу после прошивки вход: пользователь <code>skladen</code>, пароль <code>1234</code>. На экране запускается мастер: выбор языка, поиск Bluetooth-клавиатуры, Wi-Fi, затем имя пользователя и новый пароль. Пока пароль по умолчанию не сменён, вход по SSH разрешён только из локальных сетей. Имя пользователя применяется после перезагрузки.</p>"),
+    sec("Как собрать и прошить", "<p>Нужны Mac или Linux, Docker, <code>fastboot</code> и разблокированный загрузчик. Образ собирается в Docker из официального rootfs Mobian, наших пакетов и ядра (около пяти минут). Прошивка <strong>стирает весь телефон</strong>.</p>" + BUILD_CMD + "<p>Подробности, предварительные условия и «подводные камни»: <a href=\"%s#быстрый-старт\">README в репозитории</a>.</p>" % SO),
+    sec("Пакеты из репозитория", "<p>Пакеты лежат в подписанном apt-репозитории, релиз <b>garmon</b> (arm64). В образе источник уже включён; на другой системе на Poco F1:</p>" + APT_CMD + "<p>Отпечаток ключа подписи: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>" +
+        dl([("skladenos-config", "Системные настройки устройства и SXMO, сторож тача, fastfetch."),
+            ("skladenos-firstboot", "Мастер первой загрузки (12 языков)."),
+            ("skladenos-fonts, -wallpapers", "Шрифт значков и свободные обои (CC BY-SA 4.0)."),
+            ("skladenos-artwork", "Логотип и фирменные обои (компонент <code>non-free</code>, права защищены)."),
+            ("skladenos-archive-keyring", "Ключ репозитория и источник apt."),
+            ("skladenos-emu-jornada720, -emu-psion", "Эмуляторы (см. ниже)."),
+            ("skladenos-tools, -dev, -containers", "Метапакеты: htop, git, fastfetch…; сборка программ; podman.")], cls="feat")),
+    sec("Эмуляторы", "<p>HP Jornada 720 (Windows CE, QEMU) и Psion 5mx (EPOC, WindEmu) ставятся пакетами <code>skladenos-emu-jornada720</code> и <code>skladenos-emu-psion</code> и запускаются из меню Scripts в SXMO. ROM в пакеты не входят, нужен свой: <code>~/roms/jornada720.bin</code> и <code>~/roms/5mx_eng.bin</code>. Сборка эмуляторов воспроизводится в Docker из наших форков (<a href=\"%s/qemu-jornada720\">qemu-jornada720</a>, <a href=\"%s/WindEmu\">WindEmu</a>).</p>" % ("https://github.com/DmitriiTrifonov", "https://github.com/DmitriiTrifonov")),
+    sec("Основа и права", "<p><strong>skladenOS</strong> основан на <a href=\"https://mobian.org\">Mobian</a> и <a href=\"https://www.debian.org\">Debian</a>, но не является их официальным выпуском и не связан с этими проектами. Код открыт под GPL-3.0-or-later, патчи ядра — GPL-2.0-only, свободные обои — CC BY-SA 4.0; оконный менеджер SXMO распространяется под AGPL-3.0. Лицензия каждого файла описана по стандарту REUSE. Прошивки Qualcomm и Xiaomi мы не распространяем: система извлекает их на самом телефоне.</p><p><strong>Логотипы Mitya Labs и skladenOS © 2026 Dmitrii Trifonov, все права защищены.</strong> Правила использования названий и логотипа — в <a href=\"%s/blob/main/TRADEMARK.md\">TRADEMARK.md</a>.</p>" % SO, cls="body fine"),
+    sec("Что дальше", road(["Образ собирается и прошивается из исходников", "Мастер первой загрузки на 12 языках", "Свой подписанный репозиторий пакетов, эмуляторы пакетами", "Публичный репозиторий, лицензии по REUSE", "Сборка ядра и образа в CI на GitHub", "Проверка с обоими вариантами панели Poco F1 (ebbg и tianma)", "Образ для скачивания"], 4)),
+    sec("Ссылки", "<p>Репозиторий: <a href=\"%s\">github.com/mitya-labs/skladenos</a>. Пакеты: <a href=\"%s\">mitya-labs.github.io/apt</a>. Вопросы и ошибки — <a href=\"%s/issues\">issues</a>. Новости — <a href=\"%s\">Telegram-канал</a>. Проекты ведёт организация <a href=\"%s\">mitya-labs</a>.</p>" % (SO, APT, SO, TG, GH)),
+])
+
+EN_OS_PAGE = dict(
+    lang="en", path="en/skladenos/", up="../../", home="../", ru_href="../../skladenos/", en_href="./", ru_cur="", en_cur=' aria-current="true"',
+    langlabel="Language", navlabel="Sections and language", cfg_h=EN["cfg_h"], foot=EN["foot"],
+    title="skladenOS: the system for Skladen and the Poco F1 — Mitya Labs",
+    desc="skladenOS: Mobian and SXMO for the Xiaomi Poco F1 — what works, how to build the image, packages, emulators and the apt repository.",
+    mark=MARK.format(alt="skladenOS mark: four folded panels"),
+    lede="The system for Skladen and other folding devices: Mobian (Debian) with the SXMO window manager, a 7.2 kernel with our charging and USB-PD patches, a first-boot wizard and a set of packages.",
+    status="<strong>The source and the package repository are open.</strong> There is no ready-made image to download yet: you build it from source with one command.",
+)
+EN_OS_PAGE["sections"] = "\n".join([
+    sec("What it is", "<p>skladenOS is the system for the Xiaomi Poco F1 (SDM845), first of all as part of the <a href=\"../#skladen\">Skladen</a> palmtop, where the screen and the keyboard are joined by a hinge. It is built on <a href=\"https://mobian.org\">Mobian</a> (Debian forky) with the light <a href=\"https://sxmo.org\">SXMO</a> (sway) interface: gestures, volume keys, an external keyboard. Windows and bars keep clear of the notch and the rounded corners, even in fullscreen.</p>"),
+    sec("What works", dl([
+        ("Notch and corners", "The bar and windows keep clear of the cutout and adjust when the screen rotates."),
+        ("Buttons and gestures", "Power, volume, edge gestures; <kbd>Super</kbd>+<kbd>Esc</kbd> works from an external keyboard."),
+        ("First boot", "A wizard in 12 languages (English by default): Bluetooth keyboard, Wi-Fi, user name and a required password change."),
+        ("USB and charging", "Host or device role is picked automatically; a hub, a flash drive and a keyboard work; USB-PD charging."),
+        ("Power", "“Balanced”, “Eco”, “Night” and “Performance” profiles from the menu, plus a “keep screen awake” mode."),
+        ("Layouts", "English and Russian switched with CapsLock, on-screen keyboard with Cyrillic."),
+        ("Audio, sensors, network", "Both speakers, microphone, sensors through the SLPI on kernel 7.x, Wi-Fi and Bluetooth."),
+        ("Touch watchdog", "A service resets the touchscreen driver when a touch gets stuck."),
+        ("fastfetch", "Shows the skladenOS logo and the system name.")]) +
+        '<p class="note">Verified on a Pocophone F1 (EBBG panel) with kernel 7.2: an image built from source is flashed and runs. The Tianma panel variant builds but is not verified on hardware. The SIM has not been tested.</p>'),
+    sec("First boot", "<p>Right after flashing, log in as <code>skladen</code> with the password <code>1234</code>. A wizard starts on screen: language, a Bluetooth keyboard search, Wi-Fi, then a user name and a new password. Until the default password is changed, SSH password login is allowed only from local networks. The new user name takes effect after a reboot.</p>"),
+    sec("How to build and flash", "<p>You need a Mac or Linux, Docker, <code>fastboot</code> and an unlocked bootloader. The image is assembled in Docker from the official Mobian rootfs, our packages and the kernel (about five minutes). Flashing <strong>erases the whole phone</strong>.</p>" + BUILD_CMD_EN + "<p>Details, prerequisites and pitfalls: the <a href=\"%s\">README in the repository</a>.</p>" % SO),
+    sec("Packages from the repository", "<p>The packages live in a signed apt repository, release <b>garmon</b> (arm64). The image already has the source enabled; on another system on a Poco F1:</p>" + APT_CMD + "<p>Signing key fingerprint: <code>B27E 8856 988A 9019 BB9A 23F2 BBBD 1474 A352 F720</code>.</p>" +
+        dl([("skladenos-config", "Device and SXMO system settings, the touch watchdog, fastfetch."),
+            ("skladenos-firstboot", "The first-boot wizard (12 languages)."),
+            ("skladenos-fonts, -wallpapers", "The icon font and the free wallpapers (CC BY-SA 4.0)."),
+            ("skladenos-artwork", "The logo and the branded wallpapers (<code>non-free</code> component, all rights reserved)."),
+            ("skladenos-archive-keyring", "The repository key and the apt source."),
+            ("skladenos-emu-jornada720, -emu-psion", "Emulators (see below)."),
+            ("skladenos-tools, -dev, -containers", "Metapackages: htop, git, fastfetch…; build tools; podman.")], cls="feat")),
+    sec("Emulators", "<p>HP Jornada 720 (Windows CE, QEMU) and Psion 5mx (EPOC, WindEmu) install as the packages <code>skladenos-emu-jornada720</code> and <code>skladenos-emu-psion</code> and start from the Scripts menu in SXMO. ROMs are not included; bring your own: <code>~/roms/jornada720.bin</code> and <code>~/roms/5mx_eng.bin</code>. The emulators are built reproducibly in Docker from our forks (<a href=\"%s/qemu-jornada720\">qemu-jornada720</a>, <a href=\"%s/WindEmu\">WindEmu</a>).</p>" % ("https://github.com/DmitriiTrifonov", "https://github.com/DmitriiTrifonov")),
+    sec("Basis and rights", "<p><strong>skladenOS</strong> is based on <a href=\"https://mobian.org\">Mobian</a> and <a href=\"https://www.debian.org\">Debian</a>, but it is not an official release of either and is not affiliated with those projects. The code is open under GPL-3.0-or-later, the kernel patches under GPL-2.0-only, the free wallpapers under CC BY-SA 4.0; the SXMO window manager is distributed under the AGPL-3.0. The license of every file is described to the REUSE standard. We do not distribute Qualcomm or Xiaomi firmware: the system extracts it on the phone itself.</p><p><strong>The Mitya Labs and skladenOS logos are © 2026 Dmitrii Trifonov, all rights reserved.</strong> The rules for using the names and the logo are in <a href=\"%s/blob/main/TRADEMARK.md\">TRADEMARK.md</a>.</p>" % SO, cls="body fine"),
+    sec("What is next", road(["The image builds and flashes from source", "First-boot wizard in 12 languages", "Our own signed package repository, emulators as packages", "Public repository, licenses to the REUSE standard", "Kernel and image build in CI on GitHub", "Testing with both Poco F1 panel variants (ebbg and tianma)", "A downloadable image"], 4)),
+    sec("Links", "<p>Repository: <a href=\"%s\">github.com/mitya-labs/skladenos</a>. Packages: <a href=\"%s\">mitya-labs.github.io/apt</a>. Questions and bugs: <a href=\"%s/issues\">issues</a>. News: the <a href=\"%s\">Telegram channel</a>. The projects are run by the <a href=\"%s\">mitya-labs</a> organization.</p>" % (SO, APT, SO, TG, GH)),
+])
+
+
 def build():
     for d, out in ((RU, "index.html"), (EN, "en/index.html")):
         html = PAGE.format(site=SITE, gh=GH, tg=TG, **d)
+        os.makedirs(os.path.dirname(os.path.join(ROOT, out)), exist_ok=True)
+        open(os.path.join(ROOT, out), "w", encoding="utf-8").write(html)
+        print("ok", out, len(html))
+    for d, out in ((RU_OS_PAGE, "skladenos/index.html"), (EN_OS_PAGE, "en/skladenos/index.html")):
+        html = OS_PAGE.format(site=SITE, gh=GH, tg=TG, **d)
         os.makedirs(os.path.dirname(os.path.join(ROOT, out)), exist_ok=True)
         open(os.path.join(ROOT, out), "w", encoding="utf-8").write(html)
         print("ok", out, len(html))
