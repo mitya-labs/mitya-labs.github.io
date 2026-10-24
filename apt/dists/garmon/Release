@@ -2,7 +2,7 @@ Origin: skladenOS
 Label: skladenOS
 Suite: stable
 Codename: garmon
-Date: Sat, 24 Oct 2026 20:27:37 UTC
+Date: Sat, 24 Oct 2026 20:49:29 UTC
 Architectures: arm64
 Components: main non-free
 Description: skladenOS: пакеты для Poco F1 (Mobian + SXMO)
@@ -10,20 +10,20 @@ MD5Sum:
  6da1d14da7b6de3464975d5205f6984f 9855 main/binary-arm64/Packages
  87c70f0f7a1d496a3687907d9ec921bc 3907 main/binary-arm64/Packages.gz
  ac1d9bc33d91a6bf6ac8212e33ad9158 155 main/binary-arm64/Release
- 886fb4a07e0df892cf209ac30607d4e9 965 non-free/binary-arm64/Packages
- 869e67beb8de7f8fd239ad76c9893db7 631 non-free/binary-arm64/Packages.gz
+ 21c4912d17d53383fc59b6c3f14a6fac 965 non-free/binary-arm64/Packages
+ e07ceebe62ee067f1664c6dd59572a03 632 non-free/binary-arm64/Packages.gz
  1f0f422243da871f14115743735848d1 159 non-free/binary-arm64/Release
 SHA1:
  04f19b247fc51a6042d095858e8cd061d395a437 9855 main/binary-arm64/Packages
  5956213ed3146006d51d45fe9afc22326c7b3e99 3907 main/binary-arm64/Packages.gz
  1030016ac7bdfd45d743de221aab20d81dd5c960 155 main/binary-arm64/Release
- 46a36cd8a445c08d24a62c8e1021d05b444110c8 965 non-free/binary-arm64/Packages
- 0fdc785bb8fec586517b1e99af46290c9d40535a 631 non-free/binary-arm64/Packages.gz
+ 8faa624aa4e4796b638ca2adef2a117e1818c633 965 non-free/binary-arm64/Packages
+ 0d5480de56d3f99363afe4b813268a882926e055 632 non-free/binary-arm64/Packages.gz
  fa30f0b0d87a8f54144f5bde62d48f2ddf42926e 159 non-free/binary-arm64/Release
 SHA256:
  0b69c93569cb882c5b8719b66803dffb9c3e41d2393b1d26d27467aa72ce5750 9855 main/binary-arm64/Packages
  2c589dd61e1c6ba9d0c1ac40070cd70cfddc1684395f9e45bd280b6f1121c2b0 3907 main/binary-arm64/Packages.gz
  00f0790c11650aed5abe1c7584c9f94915233008d1c566f9b87c92bd6f2af914 155 main/binary-arm64/Release
- b78357456f236681cb232411d8ab385720fd3e722951248c4096f432f1b4ecad 965 non-free/binary-arm64/Packages
- 7c32013b1845953b6f2db45d6e7e958916a4f6c6575456d86f46365b6e20688c 631 non-free/binary-arm64/Packages.gz
+ 3c96d1f40510a99318ecb76d3a2fb88b827d3bc630227099d5f04e7a95d3905b 965 non-free/binary-arm64/Packages
+ 4842b346481fb5ceb6115888d4f11dd6aa108b3184ff35f12a9de20c9dec4b44 632 non-free/binary-arm64/Packages.gz
  cd5886b5087ff54f485585202358ae37bd87fc1c9063e70557b87dddbe1d23b1 159 non-free/binary-arm64/Release

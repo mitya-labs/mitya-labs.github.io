@@ -1,15 +1,15 @@
 Package: skladenos-artwork
-Version: 0.1.0
+Version: 0.1.1
 Architecture: all
 Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
-Installed-Size: 158
+Installed-Size: 154
 Priority: optional
 Section: non-free/misc
-Filename: pool/non-free/s/skladenos-artwork/skladenos-artwork_0.1.0_all.deb
-Size: 81956
-SHA256: ea5fee778d1080a600eda1d810d1fd538f2f06705d0ac5aa09ea02d6ff4378f0
-SHA1: 168c7c43442323f4f6d6ac5435200f4dbef8180b
-MD5sum: 014efa92cf89b938d8d1ed868a05c070
+Filename: pool/non-free/s/skladenos-artwork/skladenos-artwork_0.1.1_all.deb
+Size: 81368
+SHA256: 04cc95eef65fa1a8ebd9645e5865a3aad4df6c6c80c1552a74c1594567dbd966
+SHA1: 836e22369a24816bb6482bb598bf24076f97bb1b
+MD5sum: b6fe98a16e03b05b6bc376d68817493b
 Description: skladenOS: логотип и фирменные обои (все права защищены)
  Логотип Mitya Labs (пёс) и фирменные обои «Skladen v2.1» с ним. Под копирайтом автора, не под лицензией остального
  кода skladenOS; отдельный пакет, чтобы остальные пакеты оставались свободными. Свободные обои без логотипа — skladenos-wallpapers.
