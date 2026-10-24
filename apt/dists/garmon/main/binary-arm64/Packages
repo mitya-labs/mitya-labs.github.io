@@ -1,15 +1,15 @@
 Package: skladenos-archive-keyring
-Version: 0.1.1
+Version: 0.1.2
 Architecture: all
 Maintainer: Dmitrii Trifonov <53140442+DmitriiTrifonov@users.noreply.github.com>
 Installed-Size: 15
 Priority: optional
 Section: misc
-Filename: pool/main/s/skladenos-archive-keyring/skladenos-archive-keyring_0.1.1_all.deb
-Size: 2712
-SHA256: 4ce06f8996ee09035ee54f3991372406975949eb20e3dc267cb9d3d859a3449f
-SHA1: d3b500f286db42157178a9d714fee8b4844170cf
-MD5sum: 66a1459053b3d5553c7133b27a90a787
+Filename: pool/main/s/skladenos-archive-keyring/skladenos-archive-keyring_0.1.2_all.deb
+Size: 2564
+SHA256: e3320b8f9dd5d2877ef3a365ac81caee1caa82dda4d4f1f0bc567332e27631fa
+SHA1: c503eb8fc1152d2af81cdfe641daa1b84e585568
+MD5sum: d20faf7a098c41b5b277adf81d07252a
 Description: skladenOS: ключ подписи и источник apt-репозитория
  Открытый ключ репозитория skladenOS (/usr/share/keyrings/skladenos-archive-keyring.gpg) и файл источника
  /etc/apt/sources.list.d/skladenos.sources (по умолчанию выключен до публикации репозитория).
