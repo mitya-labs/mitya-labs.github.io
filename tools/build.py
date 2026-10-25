@@ -268,6 +268,7 @@ OS_PAGE = """<!doctype html>
     <h1>skladenOS</h1>
     <p class="lede">{lede}</p>
     <p class="status">{status}</p>
+    <div class="getit">{getit}</div>
   </div>
 </div>
 {sections}
@@ -308,6 +309,7 @@ RU_OS_PAGE = dict(
     desc="skladenOS: Mobian и SXMO для Xiaomi Poco F1 — что работает, как собрать образ, пакеты, эмуляторы и apt-репозиторий.",
     mark=MARK.format(alt="Знак skladenOS: четыре сложенные грани"),
     lede="Система для Skladen и других складных устройств: Mobian (Debian) с оконным менеджером SXMO, ядро 7.2 с нашими патчами зарядки и USB-PD, мастер первой загрузки и набор пакетов.",
+    getit='<a class="cta" href="https://github.com/mitya-labs/skladenos/releases/tag/v0.1.0">Релизы: образ v0.1.0 →</a><a class="cta" href="https://mitya-labs.github.io/apt/">Репозиторий garmon (apt) →</a><p>Релиз: образ для Poco F1 (EBBG), ядро и пакеты. Garmon: подписанный apt-репозиторий, из которого телефон получает обновления.</p>',
     status="<strong>Исходники и репозиторий пакетов открыты.</strong> Готовый образ для Poco F1 (панель EBBG) — в релизе v0.1.0 на GitHub; можно собрать и из исходников одной командой.",
 )
 RU_OS_PAGE["sections"] = "\n".join([
@@ -346,6 +348,7 @@ EN_OS_PAGE = dict(
     desc="skladenOS: Mobian and SXMO for the Xiaomi Poco F1 — what works, how to build the image, packages, emulators and the apt repository.",
     mark=MARK.format(alt="skladenOS mark: four folded panels"),
     lede="The system for Skladen and other folding devices: Mobian (Debian) with the SXMO window manager, a 7.2 kernel with our charging and USB-PD patches, a first-boot wizard and a set of packages.",
+    getit='<a class="cta" href="https://github.com/mitya-labs/skladenos/releases/tag/v0.1.0">Releases: image v0.1.0 →</a><a class="cta" href="https://mitya-labs.github.io/apt/">garmon repository (apt) →</a><p>Release: the Poco F1 (EBBG) image, kernel and packages. garmon: the signed apt repository the phone gets its updates from.</p>',
     status="<strong>The source and the package repository are open.</strong> A ready-made image for the Poco F1 (EBBG panel) is in the v0.1.0 release on GitHub; you can also build it from source with one command.",
 )
 EN_OS_PAGE["sections"] = "\n".join([

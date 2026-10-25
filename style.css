@@ -145,6 +145,10 @@ footer p { margin: 0 0 .4rem; max-width: 46rem; }
 iframe.cfg { display: block; width: 100%; height: min(34rem, 80vh); margin: 1.25rem 0; border: 1px solid var(--crease); background: transparent; }
 a.cta { display: inline-block; font: 700 1rem/1 var(--mono); padding: .85rem 1.2rem; color: var(--paper); background: var(--ink); text-decoration: none; border: 2px solid var(--ink); border-radius: 999px; }
 a.cta:hover { background: transparent; color: var(--ink); }
+/* крупный блок «скачать» в шапке страницы skladenOS */
+.getit { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
+.getit a.cta { font-size: clamp(1.1rem, 3.4vw, 1.5rem); padding: 1.1rem 1.6rem; }
+.getit p { flex-basis: 100%; margin: 0; max-width: 40rem; color: var(--muted); font-size: 1rem; line-height: 1.55; }
 a.cta:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
 
 pre { font: 400 .85em var(--mono); background: var(--sheet); padding: .8rem 1rem; border-radius: 3px; overflow-x: auto; }
